@@ -1,0 +1,275 @@
+:root {
+  --main-color: #c5a6ae;
+  --text-color: #6f6e6e;
+  --h2-color: #787575;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+.menu-title {
+  font-size: 3rem;
+}
+h1 {
+  margin-left: 3%;
+}
+p {
+  color: var(--text-color);
+  font-size: 1.5rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
+.header {
+  display: flex;
+  padding: 20px;
+  height: 50px;
+  font-size: 1.2rem;
+  background-image: url("../photo/back.png");
+  background-size: auto contain;
+  background-repeat: no-repeat;
+}
+
+button {
+  padding: 10px 40px;
+  border-radius: 7%;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  margin: 20px;
+}
+
+button:hover {
+  background-color: #fff;
+  animation: pulse_button 1s ease-in-out;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+  font-size: 1.1rem;
+}
+
+button a {
+  text-decoration: none;
+  color: black;
+}
+
+@keyframes pulse_button {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+button a:hover {
+  color: #000;
+}
+
+.menu-item {
+  background-color: #e1e1e3;
+}
+
+.first-part {
+  display: flex;
+  height: 800px;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  background-image: url("../photo/bc3.png");
+  background-size: cover;
+}
+
+.first-part .menu-first-part {
+  align-self: center;
+  font-size: 2rem;
+  padding: 200px;
+}
+
+.first-part p {
+  font-size: 1.5rem;
+}
+
+.menu-first-part h2,
+.menu-first-part p {
+  margin: 20px;
+}
+.image-container {
+  position: relative;
+  width: 70vh; /* Задайте ширину и высоту контейнера, соответствующую размерам изображений */
+  height: 50vh;
+  margin: 0 auto; /* Центрируем контейнер на странице */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+}
+
+/* Настройте размеры изображений */
+.image-container img:first-child {
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+}
+
+.image-container img:last-child {
+  z-index: 2;
+  width: 70%;
+  height: auto;
+}
+
+.second-part {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 40px;
+  height: 700px;
+}
+
+.second-menu {
+  display: flex;
+  gap: 10px 35px;
+}
+
+.second-part h2,
+.second-part p {
+  align-self: flex-start;
+  margin-left: 5%;
+}
+.h3,
+.second-menu p {
+  margin: 7%;
+}
+.shadow-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+  height: 280px;
+  width: 230px;
+  backdrop-filter: blur(10px);
+  color: black;
+  border-radius: 10px;
+  padding: 30px 40px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
+}
+
+.shadow-box:hover {
+  background-color: #f7f1fb;
+}
+
+.shadow-box p {
+  font-size: 1rem;
+  text-align: center;
+}
+
+.third-part {
+  display: flex;
+  flex-direction: column;
+}
+.rev-card {
+  display: flex;
+  gap: 20px;
+}
+
+.third-menu {
+  display: flex;
+  justify-content: space-evenly;
+  background-image: url("../photo/image3.png");
+}
+
+.third-menu img {
+  max-height: 500px;
+  width: auto;
+}
+
+.reviews {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 60px;
+}
+
+/* foutrh-part */
+.fourth-part {
+  display: flex;
+  height: 650px;
+  flex-direction: column;
+  align-self: center;
+  gap: 5%;
+}
+
+.course-block {
+  height: 600px;
+  text-align: center;
+}
+
+.card {
+  display: flex;
+  justify-content: center;
+  gap: 5%;
+}
+
+.card img {
+  height: 50%;
+}
+
+.card p {
+  font-size: 1.2rem;
+  margin: 10px;
+}
+.footer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  min-height: 10vh;
+  background-color: #545458;
+}
+
+.findus img {
+  padding-left: 40px;
+  height: 30px;
+}
+
+.findus {
+}
+.footer p {
+  font-size: 1rem;
+  margin: 5px 40px;
+  color: #99999c;
+}
+
+.divider {
+  height: 10vh; /* Высота разделителя */
+  width: 2px; /* Ширина разделителя */
+  background-color: #7b7a85; /* Цвет разделителя */
+  margin: 0 20px; /* Отступы слева и справа от разделителя */
+}
+
+.fourth-part button,
+.reviews button {
+  background-color: white;
+}
