@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/Infinity.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/register.html" afterDir="false" />
+    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="start project">
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/backend/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Infinity.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Infinity.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,6 +50,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\backend" />
+      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\fixtures" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\static\img\login" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\school\templates\InfinitySchool" />
     </key>
@@ -70,6 +72,23 @@
       <option name="presentableId" value="Default" />
       <updated>1716292776734</updated>
     </task>
+    <task id="LOCAL-00001" summary="start project">
+      <option name="closed" value="true" />
+      <created>1716299458426</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716299458426</updated>
+    </task>
+    <task id="LOCAL-00002" summary="start project">
+      <option name="closed" value="true" />
+      <created>1716299475088</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716299475088</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -82,5 +101,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="start project" />
+    <option name="LAST_COMMIT_MESSAGE" value="start project" />
   </component>
 </project>

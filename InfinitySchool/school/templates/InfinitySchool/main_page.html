@@ -23,7 +23,7 @@
             <h2 class="menu-title">CODING IS FUN</h2>
             <p class="menu-subTittle">Открой двери в удивительный мир</p>
             <button><a href="error.html">Все курсы</a></button>
-            <button><a href="login.html">Войти</a></button>
+            <button><a href="{% url 'login' %}">Войти</a></button>
           </div>
         </div>
         <div class="second-part">
@@ -88,24 +88,14 @@
         <div class="fourth-part">
           <h2>Самые популярные курсы</h2>
           <div class="card">
+            {% for course in courses %}
             <div class="course-block">
-              <img src="photo/mp/minecraft.png" alt="" />
-              <h3>Основы Java для Minecraft</h3>
-              <p>Вы научитесь создавать моды<br />для...</p>
+              <img src="{{ course.image.url }}" alt="" />
+              <h3>{{ course.name }}</h3>
+              <p>{{ course.description }}</p>
               <button><a href="error.html">Узнать подробнее</a></button>
             </div>
-            <div class="course-block">
-              <img src="photo/mp/roblox.png" alt="" />
-              <h3>Основы графики для Roblox</h3>
-              <p>Разберете основы графики<br />для...</p>
-              <button><a href="error.html">Узнать подробнее</a></button>
-            </div>
-            <div class="course-block">
-              <img src="photo/python.png" alt="" />
-              <h3>Полный курс изучения Python</h3>
-              <p>Изучите с нуля язык<br />программирования...</p>
-              <button><a href="error.html">Узнать подробнее</a></button>
-            </div>
+            {% endfor %}
           </div>
         </div>
         <div class="footer">
