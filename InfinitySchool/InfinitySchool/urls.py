@@ -1,15 +1,14 @@
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
 from django.conf.urls.static import static
 from django.conf import settings
 
-from school.views import login, register, index
+from school.views import index
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', index, name='index'),
-    path('login/', login, name='login'),
-    path('register/', register, name='register'),
+    path('users/', include('users.urls', namespace='users')),
 ]
 
 if settings.DEBUG:

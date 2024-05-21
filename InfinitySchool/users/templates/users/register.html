@@ -1,4 +1,4 @@
-{% extends 'InfinitySchool/base.html' %}
+{% extends 'users/base.html' %}
 {% load static %}
 
 {% block css %}
@@ -8,15 +8,14 @@
 {% block form %}
  <form class="forms" action="#">
             <h1>Регистрация</h1>
-            <input type="text" placeholder="Имя" required />
-            <input type="text" placeholder="Фамилия" required />
+            <input type="text" placeholder="Имя пользователя" required />
             <input type="email" placeholder="Email" required />
             <input type="password" placeholder="Пароль" required />
             <input type="password" placeholder="Подтвердите пароль" required />
             <button type="submit" class="btn">Зарегистрироваться</button>
             <p>
               Уже есть аккаунт?
-              <a href="{% url 'login' %}">Войти</a>
+              <a href="{% url 'users:login' %}">Войти</a>
             </p>
           </form>
 {% endblock %}

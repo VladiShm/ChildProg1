@@ -1,4 +1,4 @@
-{% extends 'InfinitySchool/base.html' %}
+{% extends 'users/base.html' %}
 {% load static %}
 
 {% block css %}
@@ -6,15 +6,16 @@
 {% endblock %}
 
 {% block form %}
-<form class="forms" action="#">
+<form class="forms" action="{% url 'users:login' %}" method="post">
     <h1>Вход</h1>
-    <input type="text" placeholder="Логин" required />
-    <input type="password" placeholder="Пароль" required />
+    {% csrf_token %}
+    {{ form.username }}
+    {{ form.password }}
     <button type="submit" class="btn">Войти</button>
     <a href="forget_password.html">Забыли пароль?</a>
     <p>
         Еще нет аккаунта?
-        <a href="{% url 'register' %}">Зарегистрироваться</a>
+        <a href="{% url 'users:register' %}">Зарегистрироваться</a>
     </p>
 </form>
 {% endblock %}
