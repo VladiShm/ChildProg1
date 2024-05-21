@@ -10,14 +10,14 @@
   <body>
 
     <div class="container">
-      <div class="header">
+      <div class="header" style="background-image: url('{% static "img/main/back.png" %}');">
         <h1 class="logo">INFINITY CODE</h1>
       </div>
       <div class="main">
         <div class="first-part">
           <div class="image-container">
-            <img src="photo/main-paige/round.png" alt="" class="bottom-image" />
-            <img src="photo/main-paige/boy.png" alt="" />
+            <img src="{% static 'img/main/round.png' %}" alt="" class="bottom-image" />
+            <img src="{% static 'img/main/boy.png' %}" alt="" />
           </div>
           <div class="menu-first-part">
             <h2 class="menu-title">CODING IS FUN</h2>
@@ -34,24 +34,24 @@
           </p>
           <div class="second-menu">
             <div class="shadow-box">
-              <img src="photo/menu21.png" alt="" />
+              <img src="{% static 'img/main/menu21.png' %}" alt="" />
               <h3>Видеоматериалы</h3>
               <p>Различные форматы обучения</p>
             </div>
             <div class="shadow-box">
-              <img src="photo/menu22.png" alt="" />
+              <img src="{% static 'img/main/menu22.png' %}" alt="" />
               <h3>Песочница для кода</h3>
               <p>Пишите, тестируйте, эксперементируйте</p>
             </div>
             <div class="shadow-box">
-              <img src="photo/menu23.png" alt="" />
+              <img src="{% static 'img/main/menu23.png' %}" alt="" />
               <h3>Интерактивные курсы</h3>
               <p>
                 Динамический формат обучения не даст вашему ребенку заскучать
               </p>
             </div>
             <div class="shadow-box">
-              <img src="photo/menu24.png" alt="" />
+              <img src="{% static 'img/main/menu24.png' %}" alt="" />
               <h3>Онлайн поддержка</h3>
               <p>
                 Постоянная поддержка от создателей курсов, возможность общатсья
@@ -63,7 +63,7 @@
         <div class="third-part">
           <h2>Что о нас говорят пользователи?</h2>
           <div class="third-menu">
-            <img src="photo/tp-boy.png" alt="" />
+            <img src="{% static 'img/main/tp-boy.png' %}" alt="" />
             <div class="reviews">
               <div class="rev-card">
               <div class="shadow-box">
@@ -101,9 +101,9 @@
         <div class="footer">
           <div class="findus">
             <p>Социальные сети</p>
-            <a href="#"><img src="photo/mp/foot-ins.png" alt="" /></a>
-            <a href="#"><img src="photo/mp/foot-vk.png" alt="" /></a>
-            <a href="#"><img src="photo/mp/foot-goog.png" alt="" /></a>
+            <a href="#"><img src="{% static 'img/main/foot-ins.png' %}" alt="instagram" /></a>
+            <a href="#"><img src="{% static 'img/main/foot-goog.png' %}" alt="" /></a>
+            <a href="#"><img src="{% static 'img/main/foot-vk.png' %}" alt="" /></a>
           </div>
           <div class="divider"></div>
           <div>
@@ -115,6 +115,6 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/ScrollMagic.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.8/plugins/animation.gsap.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
   </body>
 </html>

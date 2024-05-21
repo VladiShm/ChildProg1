@@ -37,7 +37,7 @@ h2 {
   padding: 20px;
   height: 50px;
   font-size: 1.2rem;
-  background-image: url("../photo/back.png");
+  background-image: url("{% static 'img/main/back.png' %}");
   background-size: auto contain;
   background-repeat: no-repeat;
 }
