@@ -4,15 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="add Users model, add Login">
-      <change afterPath="$PROJECT_DIR$/InfinitySchool/static/img/main/tp-boy.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/InfinitySchool/users/forms.py" afterDir="false" />
+    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="add image to Main page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -126,7 +123,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716312064047</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="add image to Main page">
+      <option name="closed" value="true" />
+      <created>1716318958803</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716318958803</updated>
+    </task>
+    <task id="LOCAL-00006" summary="add image to Main page">
+      <option name="closed" value="true" />
+      <created>1716318966980</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716318966980</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -144,6 +157,7 @@
     <MESSAGE value="start project" />
     <MESSAGE value="add Courses model,media files, update templates" />
     <MESSAGE value="add Users model, add Login" />
-    <option name="LAST_COMMIT_MESSAGE" value="add Users model, add Login" />
+    <MESSAGE value="add image to Main page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add image to Main page" />
   </component>
 </project>
