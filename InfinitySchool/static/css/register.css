@@ -40,7 +40,7 @@ h1 {
 }
 
 .forms {
-  min-height: 500px;
+  min-height: 550px;
   min-width: 400px;
   display: flex;
   flex-direction: column;
@@ -52,7 +52,7 @@ h1 {
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.5);
 }
 
-input {
+.input_class {
   width: 300px;
   height: 40px;
   background: #fbfbfb;
@@ -74,6 +74,7 @@ input {
 button:hover {
   animation: scales 1s ease;
 }
+
 .input::placeholder {
   color: rgb(93, 90, 90);
 }

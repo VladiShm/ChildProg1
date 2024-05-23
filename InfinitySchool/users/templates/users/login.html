@@ -17,5 +17,8 @@
         Еще нет аккаунта?
         <a href="{% url 'users:register' %}">Зарегистрироваться</a>
     </p>
+    {% if form.non_field_errors %}
+        {{ form.non_field_errors }}
+    {% endif %}
 </form>
 {% endblock %}

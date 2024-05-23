@@ -8,19 +8,75 @@
   margin: 0;
   padding: 0;
   font-family: "Poppins", sans-serif;
+  list-style: none;
+  text-decoration: none;
+}
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 8%;
+  z-index:1000;
 }
 
+.header .logo {
+  font-size: 25px;
+  font-weight: 900;
+  color: black;
+}
+
+.header nav ul li {
+  position: relative;
+  float: left;
+}
+
+.header nav ul li a {
+  padding: 15px;
+  color: #000;
+  font-size: 16px;
+  display: block;
+}
+
+nav ul li ul {
+  position: absolute;
+  left: 0;
+  top: 100%;
+  width: 180px;
+  background-color: white;
+  display: none;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Тень для списка */
+  border-radius: 8px; /* Закругленные углы */
+  padding: 10px 0; /* Отступы внутри списка */
+}
+nav ul li ul li {
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+nav ul li:hover > ul {
+  display: initial;
+}
+
+nav ul li ul li:hover {
+  background: #e4e6ec;
+}
 .container {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
 }
+
 .menu-title {
   font-size: 3rem;
 }
 h1 {
   margin-left: 3%;
 }
+
 p {
   color: var(--text-color);
   font-size: 1.5rem;
@@ -30,15 +86,6 @@ h2 {
   font-size: 2.5rem;
   margin-left: 5%;
   margin-top: 3%;
-}
-
-.header {
-  display: flex;
-  padding: 20px;
-  height: 50px;
-  font-size: 1.2rem;
-  background-size: auto contain;
-  background-repeat: no-repeat;
 }
 
 button {
@@ -141,26 +188,18 @@ button a:hover {
 .second-part {
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: center;
-  gap: 40px;
-  height: 700px;
-}
-
-.second-menu {
-  display: flex;
-  gap: 10px 35px;
+  gap: 0 20px;
 }
 
 .second-part h2,
 .second-part p {
   align-self: flex-start;
-  margin-left: 5%;
+  margin-left: 7%;
 }
+
 .h3,
-.second-menu p {
-  margin: 7%;
-}
 .shadow-box {
   display: flex;
   flex-direction: column;
@@ -273,4 +312,145 @@ button a:hover {
 .fourth-part button,
 .reviews button {
   background-color: white;
+}
+
+/* slider */
+.swiper {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 35em;
+  display: flex;
+  align-items: center;
+}
+
+.second-part .card {
+  width: 18em;
+  height: 70%;
+  background-color: white;
+  border-radius: 2em;
+  box-shadow: 0 0 2em rgb(0, 0, 0, 0.2);
+  padding: 2em 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 2em 2em;
+}
+.second-part .card__image {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  /* border: 4px solid #c5a6ae; */
+  padding: 3px;
+  margin-bottom: 2em;
+}
+.second-part .card__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.second-part .card__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.second-part .card__title {
+  font-size: 1.5rem;
+  font-weight: 550;
+  position: relative;
+  top: 0.2em;
+}
+
+.second-part .card__name {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.second-part .swiper-slide:not(.swiper-slide-active) {
+  filter: blur(1px);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .first-part {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .first-part .menu-first-part {
+    padding: 50px;
+    font-size: 1.5rem;
+  }
+
+  .second-part h2,
+  .second-part p {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .third-menu {
+    flex-direction: column;
+  }
+
+  .third-menu img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .reviews {
+    gap: 30px;
+  }
+
+  .fourth-part {
+    height: auto;
+    gap: 2%;
+  }
+
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .header button {
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    margin-left: 2%;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+
+  button {
+    padding: 5px 20px;
+    margin: 10px;
+  }
+
+  .menu-title {
+    font-size: 2rem;
+  }
+
+  .first-part .menu-first-part {
+    padding: 20px;
+    font-size: 1.2rem;
+  }
+
+  .second-part .card {
+    width: 100%;
+    height: auto;
+    margin: 1em 0;
+  }
 }

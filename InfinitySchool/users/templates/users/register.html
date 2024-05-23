@@ -1,3 +1,4 @@
+<!-- users/templates/users/register.html -->
 {% extends 'users/base.html' %}
 {% load static %}
 
@@ -6,16 +7,19 @@
 {% endblock %}
 
 {% block form %}
- <form class="forms" action="#">
-            <h1>Регистрация</h1>
-            <input type="text" placeholder="Имя пользователя" required />
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Пароль" required />
-            <input type="password" placeholder="Подтвердите пароль" required />
-            <button type="submit" class="btn">Зарегистрироваться</button>
-            <p>
-              Уже есть аккаунт?
-              <a href="{% url 'users:login' %}">Войти</a>
-            </p>
-          </form>
+<form class="forms" action="{% url 'users:register' %}" method="post">
+    <h1>Регистрация</h1>
+    {% csrf_token %}
+    {{ form.first_name }}
+     {{ form.last_name }}
+{{ form.username }}
+ {{ form.email }}
+    {{ form.password1 }}
+ {{ form.password2 }}
+    <button type="submit" class="btn">Зарегистрироваться</button>
+    <p>
+        Уже есть аккаунт?
+        <a href="{% url 'users:login' %}">Войти</a>
+    </p>
+</form>
 {% endblock %}

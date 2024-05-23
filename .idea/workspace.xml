@@ -4,12 +4,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="add image to Main page">
+    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="last version1">
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/static/css/profile.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/static/img/profile.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/profile.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/base.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,20 +31,21 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RESET_MODE" value="MIXED" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "VladiShm"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;VladiShm&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings">
     <option name="selectedUrlAndAccountId">
       <UrlAndAccount>
@@ -44,9 +57,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2gmBGTLVUXyq5kNIJkCUcLsXOfS" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -60,11 +73,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
-    "last_opened_file_path": "C:/Users/vlada/PycharmProjects/Infinity/InfinitySchool/static/img/main"
+    "last_opened_file_path": "C:/Users/vlada/PycharmProjects/Infinity/InfinitySchool/static/img",
+    "settings.editor.selected.configurable": "configurable.group.language"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\static\img" />
+      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\static\css" />
+      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\users\templates\users" />
+      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\static\react" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\static\img\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -139,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716318966980</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="last version1">
+      <option name="closed" value="true" />
+      <created>1716364924043</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1716364924043</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -158,6 +184,18 @@
     <MESSAGE value="add Courses model,media files, update templates" />
     <MESSAGE value="add Users model, add Login" />
     <MESSAGE value="add image to Main page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add image to Main page" />
+    <MESSAGE value="last version1" />
+    <option name="LAST_COMMIT_MESSAGE" value="last version1" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

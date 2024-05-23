@@ -15,18 +15,18 @@ document.addEventListener("DOMContentLoaded", function () {
         ease: "elastic.out(1, 0.5)", // Используем упругий эффект для плавного появления
       }
     )
-    .fromTo(
-      ".menu-title",
-      {
-        x: 100,
-        opacity: 0,
-      },
-      {
-        x: 0,
-        opacity: 1,
-      },
-      1
-    )
+//    .fromTo(
+//      ".menu-title",
+//      {
+//        x: 100,
+//        opacity: 0,
+//      },
+//      {
+//        x: 0,
+//        opacity: 1,
+//      },
+//      1
+//    )
     .fromTo(
       ".menu-subTittle",
       {

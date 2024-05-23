@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'debug_toolbar',
     'school.apps.SchoolConfig',
     'users',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
