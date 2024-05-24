@@ -3,18 +3,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
   const tl1 = gsap.timeline();
   tl1
-    .fromTo(
-      ".logo",
-      { opacity: 0, y: -50, scale: 0.5, rotation: -30 },
-      {
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        rotation: 0,
-        duration: 2, // Увеличиваем продолжительность анимации
-        ease: "elastic.out(1, 0.5)", // Используем упругий эффект для плавного появления
-      }
-    )
+//    .fromTo(
+//      ".logo",
+//      { opacity: 0, y: -50, scale: 0.5, rotation: -30 },
+//      {
+//        opacity: 1,
+//        y: 0,
+//        scale: 1,
+//        rotation: 0,
+//        duration: 2, // Увеличиваем продолжительность анимации
+//        ease: "elastic.out(1, 0.5)", // Используем упругий эффект для плавного появления
+//      }
+//    )
 //    .fromTo(
 //      ".menu-title",
 //      {
@@ -27,18 +27,18 @@ document.addEventListener("DOMContentLoaded", function () {
 //      },
 //      1
 //    )
-    .fromTo(
-      ".menu-subTittle",
-      {
-        opacity: 0,
-        y: 50,
-      },
-      {
-        opacity: 1,
-        y: 0,
-      },
-      1.5
-    )
+//    .fromTo(
+//      ".menu-subTittle",
+//      {
+//        opacity: 0,
+//        y: 50,
+//      },
+//      {
+//        opacity: 1,
+//        y: 0,
+//      },
+//      1.5
+//    )
     .fromTo(
       ".bottom-image",
       {

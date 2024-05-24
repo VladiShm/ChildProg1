@@ -11,6 +11,21 @@
   list-style: none;
   text-decoration: none;
 }
+h1 {
+  margin-left: 3%;
+}
+
+p {
+  color: var(--text-color);
+  font-size: 1.3rem;
+}
+
+h2 {
+  font-size: 2.3rem;
+  margin-left: 5%;
+  margin-top: 3%;
+}
+
 .header {
   position: fixed;
   top: 0;
@@ -18,13 +33,14 @@
   right: 0;
   background-color: white;
   display: flex;
+  display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 8%;
   z-index:1000;
 }
 
-.header .logo {
+.logo {
   font-size: 25px;
   font-weight: 900;
   color: black;
@@ -72,22 +88,8 @@ nav ul li ul li:hover {
 
 .menu-title {
   font-size: 3rem;
+  bold: 10000;
 }
-h1 {
-  margin-left: 3%;
-}
-
-p {
-  color: var(--text-color);
-  font-size: 1.5rem;
-}
-
-h2 {
-  font-size: 2.5rem;
-  margin-left: 5%;
-  margin-top: 3%;
-}
-
 button {
   padding: 10px 40px;
   border-radius: 7%;
@@ -172,7 +174,6 @@ button a:hover {
   margin: auto;
 }
 
-/* Настройте размеры изображений */
 .image-container img:first-child {
   z-index: 1;
   width: 100%;
@@ -190,7 +191,7 @@ button a:hover {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 0 20px;
+  gap: 20px 20px;
 }
 
 .second-part h2,
@@ -199,6 +200,8 @@ button a:hover {
   margin-left: 7%;
 }
 
+
+
 .h3,
 .shadow-box {
   display: flex;
@@ -206,7 +209,7 @@ button a:hover {
   justify-content: center;
   align-items: center;
   gap: 10%;
-  height: 280px;
+  height: 220px;
   width: 230px;
   backdrop-filter: blur(10px);
   color: black;

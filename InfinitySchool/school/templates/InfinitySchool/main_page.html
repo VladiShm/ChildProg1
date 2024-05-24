@@ -9,37 +9,69 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
+      <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+  />
     <title>Main-page</title>
   </head>
   <body>
-
     <div class="container">
-     <div class="header" style="background-image: url('{% static 'img/main/back.png' %}');">
-              <a href="#" class="logo">INFINITY CODE</a>
-      <nav>
-        <ul>
-          <li><a href="#">Каталог</a></li>
-          <li>
-            <a href="#">Меню &bigtriangledown;</a>
-            <ul>
-              <li><a href="{% url 'users:profile' %}">Профиль</a></li>
-              <li><a href="#">Мои курсы</a></li>
-              <li><a href="{% url 'admin:index' %}">Админ-панель</a></li>
-              <li><a href="#">Выйти</a></li>
-            </ul>
-          </li>
-          <li><a href="{% url 'users:login' %}">Войти</a></li>
-        </ul>
-      </nav>
+      <div
+        class="header"
+        style="background-image: url('{% static 'img/main/back.png' %}')"
+      >
+        <a href="#" class="logo">INFINITY CODE</a>
+        <nav>
+          <ul>
+            <li>
+              <a href="#"><i class="fas fa-book"></i> Каталог</a>
+            </li>
+            <li>
+              <a href="#"><i class="fas fa-bars"></i> Меню</a>
+              <ul>
+                <li>
+                  <a href="{% url 'users:profile' %}"
+                    ><i class="fas fa-user"></i> Профиль</a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-book-open"></i> Мои курсы</a>
+                </li>
+                <li>
+                  <a href="{% url 'admin:index' %}"
+                    ><i class="fas fa-cogs"></i> Админ-панель</a
+                  >
+                </li>
+                <li>
+                  <a href="#"><i class="fas fa-sign-out-alt"></i> Выйти</a>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <a href="{% url 'users:login' %}"
+                ><i class="fas fa-sign-in-alt"></i> Войти</a
+              >
+            </li>
+          </ul>
+        </nav>
       </div>
       <div class="main">
-        <div class="first-part" style="background-image: url('{% static 'img/login/bc3.png' %}');">
+        <div
+          class="first-part"
+          style="background-image: url('{% static 'img/login/bc3.png' %}')"
+        >
           <div class="image-container">
-            <img src="{% static 'img/main/round.png' %}" alt="" class="bottom-image" />
+            <img
+              src="{% static 'img/main/round.png' %}"
+              alt=""
+              class="bottom-image"
+            />
             <img src="{% static 'img/main/boy.png' %}" alt="" />
           </div>
           <div class="menu-first-part">
-            <h2 class="menu-title">CODING IS FUN</h2>
+            <h2 class="menu-title logo>">CODING IS FUN</h2>
+
             <p class="menu-subTittle">Открой двери в удивительный мир</p>
             <button><a href="error.html">Все курсы</a></button>
             <button><a href="{% url 'users:login' %}">Войти</a></button>
@@ -117,20 +149,21 @@
             <img src="{% static 'img/main/tp-boy.png' %}" alt="" />
             <div class="reviews">
               <div class="rev-card">
-              <div class="shadow-box">
-                <p>
-                  Все очень понравилось!<br />Качественный учебный материал,<br />интерактивные
-                  задания,<br />ребенку не было скучно
-                </p>
-                <h3>Александр Иванов</h3>
-              </div>
-              <div class="shadow-box">
-                <p>
-                  Очень классная платформа.<br />Мне было интересно!<br />Обязательно
-                  продолжу обучение
-                </p>
-                <h3>Юлия Федорова</h3>
-              </div>
+                <div class="shadow-box">
+                  <p>
+                    Все очень понравилось!<br />Качественный учебный
+                    материал,<br />интерактивные задания,<br />ребенку не было
+                    скучно
+                  </p>
+                  <h3>Александр Иванов</h3>
+                </div>
+                <div class="shadow-box">
+                  <p>
+                    Очень классная платформа.<br />Мне было интересно!<br />Обязательно
+                    продолжу обучение
+                  </p>
+                  <h3>Юлия Федорова</h3>
+                </div>
               </div>
               <button><a href="error.html">Все отзывы</a></button>
             </div>
@@ -152,9 +185,15 @@
         <div class="footer">
           <div class="findus">
             <p>Социальные сети</p>
-            <a href="#"><img src="{% static 'img/main/foot-ins.png' %}" alt="instagram" /></a>
-            <a href="#"><img src="{% static 'img/main/foot-goog.png' %}" alt="" /></a>
-            <a href="#"><img src="{% static 'img/main/foot-vk.png' %}" alt="" /></a>
+            <a href="#"
+              ><img src="{% static 'img/main/foot-ins.png' %}" alt="instagram"
+            /></a>
+            <a href="#"
+              ><img src="{% static 'img/main/foot-goog.png' %}" alt=""
+            /></a>
+            <a href="#"
+              ><img src="{% static 'img/main/foot-vk.png' %}" alt=""
+            /></a>
           </div>
           <div class="divider"></div>
           <div>
@@ -162,9 +201,11 @@
             <p>г.Пермь</p>
             <p>infinity_code@mail.ru</p>
           </div>
+        </div>
+      </div>
     </div>
-        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-         <script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script>
       var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
         grabCursor: true,
