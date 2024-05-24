@@ -88,8 +88,9 @@ nav ul li ul li:hover {
 
 .menu-title {
   font-size: 3rem;
-  bold: 10000;
 }
+
+
 button {
   padding: 10px 40px;
   border-radius: 7%;
@@ -157,6 +158,10 @@ button a:hover {
 .menu-first-part h2,
 .menu-first-part p {
   margin: 20px;
+      text-align:center;
+}
+.menu-first-part h2{
+font-size:3rem;
 }
 .image-container {
   position: relative;
