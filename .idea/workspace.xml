@@ -4,13 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="last version4">
+    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="add user profile">
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/base.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/courses.json" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/fixtures/courses.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/login.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/register.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/register.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/js/script.js" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/js/script.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/login.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/register.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,9 +82,9 @@
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\static\img\main" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\fixtures" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\users\templates\users" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\users\templates" />
-      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\fixtures" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\backend" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\static\img\login" />
     </key>
@@ -178,7 +185,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716536759349</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="add user profile">
+      <option name="closed" value="true" />
+      <created>1716549772113</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716549772113</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -201,7 +216,8 @@
     <MESSAGE value="last version2" />
     <MESSAGE value="last version3" />
     <MESSAGE value="last version4" />
-    <option name="LAST_COMMIT_MESSAGE" value="last version4" />
+    <MESSAGE value="add user profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="add user profile" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

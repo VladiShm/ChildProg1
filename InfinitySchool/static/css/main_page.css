@@ -26,6 +26,21 @@ h2 {
   margin-top: 3%;
 }
 
+
+button {
+  padding: 10px 40px;
+  border-radius: 7%;
+  background-color: var(--main-color);
+  border: 2px solid var(--main-color);
+  margin: 20px;
+}
+
+button:hover {
+  background-color: #fff;
+  animation: pulse_button 1s ease-in-out;
+}
+
+/* header */
 .header {
   position: fixed;
   top: 0;
@@ -65,9 +80,9 @@ nav ul li ul {
   width: 180px;
   background-color: white;
   display: none;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Тень для списка */
-  border-radius: 8px; /* Закругленные углы */
-  padding: 10px 0; /* Отступы внутри списка */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  padding: 10px 0;
 }
 nav ul li ul li {
   width: 100%;
@@ -86,24 +101,7 @@ nav ul li ul li:hover {
   min-height: 100vh;
 }
 
-.menu-title {
-  font-size: 3rem;
-}
-
-
-button {
-  padding: 10px 40px;
-  border-radius: 7%;
-  background-color: var(--main-color);
-  border: 2px solid var(--main-color);
-  margin: 20px;
-}
-
-button:hover {
-  background-color: #fff;
-  animation: pulse_button 1s ease-in-out;
-}
-
+/* first page */
 a {
   text-decoration: none;
   color: #000;
@@ -158,16 +156,19 @@ button a:hover {
 .menu-first-part h2,
 .menu-first-part p {
   margin: 20px;
-      text-align:center;
+  text-align:center;
 }
+
 .menu-first-part h2{
 font-size:3rem;
 }
+
+/* second page */
 .image-container {
   position: relative;
-  width: 70vh; /* Задайте ширину и высоту контейнера, соответствующую размерам изображений */
+  width: 70vh;
   height: 50vh;
-  margin: 0 auto; /* Центрируем контейнер на странице */
+  margin: 0 auto;
 }
 
 .image-container img {
@@ -205,9 +206,6 @@ font-size:3rem;
   margin-left: 7%;
 }
 
-
-
-.h3,
 .shadow-box {
   display: flex;
   flex-direction: column;
@@ -232,6 +230,67 @@ font-size:3rem;
   font-size: 1rem;
   text-align: center;
 }
+
+/* slider */
+.swiper {
+  width: 100%;
+}
+
+.swiper-wrapper {
+  width: 100%;
+  height: 35em;
+  display: flex;
+  align-items: center;
+}
+
+.second-part .card {
+  width: 18em;
+  height: 70%;
+  background-color: white;
+  border-radius: 2em;
+  box-shadow: 0 0 2em rgb(0, 0, 0, 0.2);
+  padding: 2em 1em;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin: 2em 2em;
+}
+.second-part .card__image {
+  width: 10em;
+  height: 10em;
+  border-radius: 50%;
+  padding: 3px;
+  margin-bottom: 2em;
+}
+.second-part .card__image img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.second-part .card__content {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.second-part .card__title {
+  font-size: 1.5rem;
+  font-weight: 550;
+  position: relative;
+  top: 0.2em;
+}
+
+.second-part .card__name {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.second-part .swiper-slide:not(.swiper-slide-active) {
+  filter: blur(1px);
+}
+/* third page */
 
 .third-part {
   display: flex;
@@ -302,8 +361,6 @@ font-size:3rem;
   height: 30px;
 }
 
-.findus {
-}
 .footer p {
   font-size: 1rem;
   margin: 5px 40px;
@@ -311,10 +368,10 @@ font-size:3rem;
 }
 
 .divider {
-  height: 10vh; /* Высота разделителя */
-  width: 2px; /* Ширина разделителя */
-  background-color: #7b7a85; /* Цвет разделителя */
-  margin: 0 20px; /* Отступы слева и справа от разделителя */
+  height: 10vh;
+  width: 2px;
+  background-color: #7b7a85;
+  margin: 0 20px;
 }
 
 .fourth-part button,
@@ -322,66 +379,6 @@ font-size:3rem;
   background-color: white;
 }
 
-/* slider */
-.swiper {
-  width: 100%;
-}
-
-.swiper-wrapper {
-  width: 100%;
-  height: 35em;
-  display: flex;
-  align-items: center;
-}
-
-.second-part .card {
-  width: 18em;
-  height: 70%;
-  background-color: white;
-  border-radius: 2em;
-  box-shadow: 0 0 2em rgb(0, 0, 0, 0.2);
-  padding: 2em 1em;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  margin: 2em 2em;
-}
-.second-part .card__image {
-  width: 10em;
-  height: 10em;
-  border-radius: 50%;
-  /* border: 4px solid #c5a6ae; */
-  padding: 3px;
-  margin-bottom: 2em;
-}
-.second-part .card__image img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.second-part .card__content {
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-}
-
-.second-part .card__title {
-  font-size: 1.5rem;
-  font-weight: 550;
-  position: relative;
-  top: 0.2em;
-}
-
-.second-part .card__name {
-  margin-top: 20px;
-  text-align: center;
-}
-
-.second-part .swiper-slide:not(.swiper-slide-active) {
-  filter: blur(1px);
-}
 /* Responsive Design */
 @media (max-width: 768px) {
   .first-part {

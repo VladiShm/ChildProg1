@@ -27,6 +27,7 @@
             <li>
               <a href="#"><i class="fas fa-book"></i> Каталог</a>
             </li>
+            {% if user.is_authenticated %}
             <li>
               <a href="#"><i class="fas fa-bars"></i> Меню</a>
               <ul>
@@ -44,15 +45,18 @@
                   >
                 </li>
                 <li>
-                  <a href="#"><i class="fas fa-sign-out-alt"></i> Выйти</a>
+                  <a href="{% url 'users:logout' %}"><i class="fas fa-sign-out-alt"></i> Выйти</a>
                 </li>
               </ul>
             </li>
+            {% endif %}
+            {% if not user.is_authenticated %}
             <li>
               <a href="{% url 'users:login' %}"
                 ><i class="fas fa-sign-in-alt"></i> Войти</a
               >
             </li>
+            {% endif %}
           </ul>
         </nav>
       </div>
@@ -70,7 +74,7 @@
             <img src="{% static 'img/main/boy.png' %}" alt="" />
           </div>
           <div class="menu-first-part">
-            <h2 class="menu-title>">CODING IS FUN</h2>
+            <h2>CODING IS FUN</h2>
             <p>Открой двери в удивительный мир</p>
           </div>
         </div>

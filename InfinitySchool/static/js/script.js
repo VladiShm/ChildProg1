@@ -11,8 +11,8 @@ document.addEventListener("DOMContentLoaded", function () {
 //        y: 0,
 //        scale: 1,
 //        rotation: 0,
-//        duration: 2, // Увеличиваем продолжительность анимации
-//        ease: "elastic.out(1, 0.5)", // Используем упругий эффект для плавного появления
+//        duration: 2,
+//        ease: "elastic.out(1, 0.5)",
 //      }
 //    )
 //    .fromTo(
