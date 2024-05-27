@@ -7,6 +7,11 @@
 
 {% block form %}
 <form class="forms" action="{% url 'users:login' %}" method="post">
+    {% if form.non_field_errors %}
+      <div class="profile-form">
+        {{ form.non_field_errors }}
+        </div>
+    {% endif %}
     <h1>Вход</h1>
     {% csrf_token %}
     {{ form.username }}
@@ -17,8 +22,5 @@
         Еще нет аккаунта?
         <a href="{% url 'users:register' %}">Зарегистрироваться</a>
     </p>
-    {% if form.non_field_errors %}
-        {{ form.non_field_errors }}
-    {% endif %}
 </form>
 {% endblock %}
