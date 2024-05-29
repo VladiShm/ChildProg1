@@ -7,9 +7,16 @@
 
 {% block form %}
 <form class="forms" action="{% url 'users:login' %}" method="post">
-    {% if form.non_field_errors %}
+    {% if messages or form.non_field_errors %}
       <div class="profile-form">
-        {{ form.non_field_errors }}
+        {% if messages  %}
+            {% for message in messages %}
+                {{ message }}
+            {% endfor %}
+        {% else %}
+            {{ form.non_field_errors }}
+        {% endif %}
+        
         </div>
     {% endif %}
     <h1>Вход</h1>
