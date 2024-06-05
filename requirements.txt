@@ -1,4 +1,4 @@
-django==5.0.6
+django==3.2.5
 pillow==10.3.0
 pip==23.2.1
 sqlparse==0.5.0
