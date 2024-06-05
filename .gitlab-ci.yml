@@ -7,4 +7,4 @@ test:
   before_script:
    - pip install -r requirements.txt
   script:
-    - pipenv run python InfinitySchool/manage.py test
+    - python InfinitySchool/manage.py test
