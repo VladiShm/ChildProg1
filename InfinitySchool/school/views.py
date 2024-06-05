@@ -38,7 +38,6 @@ def run_code(request):
 
 def execute_code(code):
     try:
-        # Важно: используйте безопасные методы исполнения кода
         exec_locals = {}
         exec(code, globals(), exec_locals)
         res = exec_locals.get("result")
