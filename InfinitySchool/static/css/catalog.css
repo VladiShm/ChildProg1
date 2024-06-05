@@ -177,6 +177,11 @@ nav ul li ul li:hover {
   margin: 10vh auto;
 }
 
+.product-card a{
+    text-decoration: none;
+    color: #000;
+}
+
 .product-card {
   background-color: #fff;
   padding: 20px;

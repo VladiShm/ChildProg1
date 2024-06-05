@@ -64,14 +64,16 @@
       </div>
       <div class="main">
         <div class="product-grid">
-        {% for product in courses %}
-        <div class="product-card">
-          <img src="{{ product.image.url }}" alt="{{ product.name }}" />
-          <h2>{{ product.name }}</h2>
-          <p>{{ product.description }}</p>
-        </div>
-        {% endfor %}
-      </div>
+          {% for product in courses %}
+            <div class="product-card">
+              <a href="{% url 'course_detail' product.id %}">
+                <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+                <h2>{{ product.name }}</h2>
+                <p>{{ product.description }}</p>
+              </a>
+            </div>
+          {% endfor %}
+        </div>`
       </div>
     </div>
     <script src="{% static 'js/search.js' %}"></script>
