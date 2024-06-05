@@ -7,4 +7,4 @@ test:
   before_script:
    - pip install -r requirements.txt
   script:
-    - python InfinitySchool/manage.py tests.IndexViewTestCase
+    - python InfinitySchool/manage.py test
