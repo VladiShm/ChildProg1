@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="Добавление CI/CD3">
+    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="Добавление CI/CD4">
       <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -244,7 +244,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717598064824</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Добавление CI/CD4">
+      <option name="closed" value="true" />
+      <created>1717598319056</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1717598319056</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -273,7 +281,8 @@
     <MESSAGE value="Добавление CI/CD" />
     <MESSAGE value="Добавление CI/CD2" />
     <MESSAGE value="Добавление CI/CD3" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление CI/CD3" />
+    <MESSAGE value="Добавление CI/CD4" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление CI/CD4" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
