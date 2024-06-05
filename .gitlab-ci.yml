@@ -8,4 +8,4 @@ test:
     - pip install pipenv
     - pipenv install --dev
   script:
-     - find . -name "manage.py"
+    - pipenv run python InfinitySchool/manage.py test
