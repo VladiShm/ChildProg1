@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="Добавление CI/CD11">
-      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="Добавление CI/CD12">
+      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/.gitlab-ci.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +72,11 @@
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\static\react" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vlada\OneDrive\Рабочий стол\child-prog\InfinitySchool" />
       <recent name="C:\Users\vlada\OneDrive\Рабочий стол\child-prog" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\fixtures" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\users\templates\users" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\users\templates" />
-      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\backend" />
     </key>
   </component>
   <component name="RunManager">
@@ -316,7 +317,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717599722113</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Добавление CI/CD12">
+      <option name="closed" value="true" />
+      <created>1717599834263</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1717599834263</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -353,7 +362,8 @@
     <MESSAGE value="Добавление CI/CD9" />
     <MESSAGE value="Добавление CI/CD10" />
     <MESSAGE value="Добавление CI/CD11" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление CI/CD11" />
+    <MESSAGE value="Добавление CI/CD12" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавление CI/CD12" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
