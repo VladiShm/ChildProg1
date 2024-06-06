@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="Добавление CI/CD15">
-      <change beforePath="$PROJECT_DIR$/.gitlab-ci.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.gitlab-ci.yml" afterDir="false" />
+    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="Добавлен тест на проверку регистрации">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/tests.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/users/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/tests.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -351,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717600196505</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="Добавлен тест на проверку регистрации">
+      <option name="closed" value="true" />
+      <created>1717675012686</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1717675012686</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -366,7 +372,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Courses model,media files, update templates" />
     <MESSAGE value="add Users model, add Login" />
     <MESSAGE value="add image to Main page" />
     <MESSAGE value="last version1" />
@@ -391,7 +396,8 @@
     <MESSAGE value="Добавление CI/CD13" />
     <MESSAGE value="Добавление CI/CD14" />
     <MESSAGE value="Добавление CI/CD15" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавление CI/CD15" />
+    <MESSAGE value="Добавлен тест на проверку регистрации" />
+    <option name="LAST_COMMIT_MESSAGE" value="Добавлен тест на проверку регистрации" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
