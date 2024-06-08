@@ -3,7 +3,7 @@ name: child
 services:
   app:
     restart: unless-stopped
-    image: registry.qpilipp.ru/psu-mkr-2024/1-infinity/child-prog:${CI_COMMIT_TAG:?0.0.2}
+    image: registry.qpilipp.ru/psu-mkr-2024/1-infinity/child-prog:${CI_COMMIT_TAG:?error}
     ports:
       - 4500:4500
     environment:
