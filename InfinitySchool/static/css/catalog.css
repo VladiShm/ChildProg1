@@ -302,3 +302,27 @@ nav ul li ul li:hover {
 .main{
 height:90vh;
 }
+
+.product-card {
+  position: relative;
+  /* other styles */
+}
+
+.like-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+}
+
+.like-button .fas.fa-heart {
+  color: gray;
+  transition: color 0.3s;
+}
+
+.like-button.liked .fas.fa-heart {
+  color: red;
+}
