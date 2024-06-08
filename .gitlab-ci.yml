@@ -57,4 +57,4 @@ deploy:
     - scp -P $REMOTE_PORT "docker/docker-compose.yml" $REMOTE_USER@$REMOTE_HOST:child/docker/docker-compose.yml
     - scp -P $REMOTE_PORT "db.sqlite3" $REMOTE_USER@$REMOTE_HOST:child/db.sqlite3
     - scp -P $REMOTE_PORT "tag.env" $REMOTE_USER@$REMOTE_HOST:child/tag.env
-    - ssh $REMOTE_USER@$REMOTE_HOST -p $REMOTE_PORT export $(cat child/tag.env | xargs) && docker-compose -f child/docker/docker-compose.yml up -d
+    - ssh $REMOTE_USER@$REMOTE_HOST -p $REMOTE_PORT "export $(cat child/tag.env | xargs) && docker-compose -f child/docker/docker-compose.yml up -d"
