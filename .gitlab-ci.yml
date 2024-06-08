@@ -5,7 +5,7 @@ stages:
   - deploy
   
 .ssh_defaults:
-  image: kroniak/ssh-client
+  image: registry.qpilipp.ru/psu-mkr-2024/1-infinity/child-prog/child-ssh-client:latest
   before_script:
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
