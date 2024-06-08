@@ -5,7 +5,7 @@ stages:
   - deploy
   
 .ssh_defaults:
-  image: kroniak/ssh-client
+  image: registry.qpilipp.ru/psu-mkr-2024/1-infinity/child-prog/child-ssh-client:latest
   before_script:
     - eval $(ssh-agent -s)
     - echo "$SSH_PRIVATE_KEY" | tr -d '\r' | ssh-add - > /dev/null
@@ -50,13 +50,13 @@ deploy:
     extends:
       .ssh_defaults
     stage: deploy
-    before_script:
-    - export IMAGE=$CI_REGISTRY_IMAGE:$CI_COMMIT_TAG
-    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $CI_REGISTRY
     script:
+    - echo CI_COMMIT_TAG=$CI_COMMIT_TAG > tag.env
     - ssh $REMOTE_USER@$REMOTE_HOST -p $REMOTE_PORT docker login -u $LOGIN_GITLAB -p $PASSWORD_GITLAB $CI_REGISTRY
     - ssh $REMOTE_USER@$REMOTE_HOST -p $REMOTE_PORT rm -fr child
     - ssh $REMOTE_USER@$REMOTE_HOST -p $REMOTE_PORT mkdir -p child/docker
     - scp -P $REMOTE_PORT "docker/docker-compose.yml" $REMOTE_USER@$REMOTE_HOST:child/docker/docker-compose.yml
     - scp -P $REMOTE_PORT "db.sqlite3" $REMOTE_USER@$REMOTE_HOST:child/db.sqlite3
-    - ssh $REMOTE_USER@$REMOTE_HOST -p $REMOTE_PORT docker-compose  -f child/docker/docker-compose.yml up -d
+    - scp -P $REMOTE_PORT "tag.env" $REMOTE_USER@$REMOTE_HOST:child/tag.env
+    - scp -P $REMOTE_PORT "deploy.sh" $REMOTE_USER@$REMOTE_HOST:child/deploy.sh
+    - ssh $REMOTE_USER@$REMOTE_HOST -p $REMOTE_PORT ./child/deploy.sh
