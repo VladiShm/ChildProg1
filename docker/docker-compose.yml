@@ -1,0 +1,33 @@
+version: "3"
+name: child
+services:
+  app:
+    restart: unless-stopped
+    image: child-dj-image
+    ports:
+      - 4500:4500
+    environment:
+      - PG_PORT=5432
+      - PG_HOST=db
+    networks:
+      - child-net
+    volumes:
+      - ../db.sqlite3:/app/db.sqlite3
+
+  db:
+    image: postgres:16.2
+    restart: unless-stopped
+    ports:
+      - "4501:5432"
+    volumes:
+      - child_data:/var/lib/postgresql/data
+    environment:
+      - POSTGRES_PASSWORD=VsP5y4xqG97z6LDarJEAUN
+    networks:
+      - child-net
+
+volumes:
+  child_data:
+
+networks:
+  child-net:
