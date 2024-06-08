@@ -7,4 +7,4 @@ test:
   before_script:
    - pip install -r requirements.txt
   script:
-    - python InfinitySchool/manage.py test school users
+    - python manage.py test school users
