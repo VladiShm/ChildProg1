@@ -1,5 +1,5 @@
 from django.db import models
-
+from users.models import User
 
 class Courses(models.Model):
     name = models.CharField(max_length=128)
@@ -26,3 +26,11 @@ class PracticeTasks(models.Model):
 
     def __str__(self):
         return f'Практическая задача для теории: {self.theory.title}'
+    
+class Like(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    course = models.ForeignKey(Courses, on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        unique_together = ('user', 'course')

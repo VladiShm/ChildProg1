@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Bootstrap core CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <link href="{% static 'css/profile.css' %}" rel="stylesheet">
@@ -17,7 +16,7 @@
         <nav>
             <ul>
                 <li>
-                    <a href="#"><i class="fas fa-book"></i> Каталог</a>
+                    <a href="{% url 'catalog' %}"><i class="fas fa-book"></i> Каталог</a>
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-bars"></i> Меню</a>
@@ -32,7 +31,7 @@
                             <a href="{% url 'admin:index' %}"><i class="fas fa-cogs"></i> Админ-панель</a>
                         </li>
                         <li>
-                            <a href="#"><i class="fas fa-sign-out-alt"></i> Выйти</a>
+                            <a href="{% url 'users:logout' %}"><i class="fas fa-sign-out-alt"></i> Выйти</a>
                         </li>
                     </ul>
                 </li>
@@ -73,17 +72,53 @@
     <div class="row mt-4">
         <div class="col-md-12">
             <h3>Избранные курсы</h3>
-            <ul class="list-group">
+            <div class="product-grid profile-courses">
                 {% for favorite in favorite_courses %}
-                    <li class="list-group-item">
-                        <a href="{% url 'course_detail' favorite.course.id %}">{{ favorite.course.name }}</a>
-                    </li>
+                    <div class="product-card profile-product-card">
+                        <a href="{% url 'course_detail' favorite.course.id %}">
+                            <img src="{{ favorite.course.image.url }}" alt="{{ favorite.course.name }}" />
+                            <h2>{{ favorite.course.name }}</h2>
+                            <p>{{ favorite.course.description }}</p>
+                        </a>
+                        <button class="like-button liked" data-course-id="{{ favorite.course.id }}">
+                            <i class="fas fa-heart"></i>
+                        </button>
+                    </div>
                 {% empty %}
-                    <li class="list-group-item">У вас нет избранных курсов.</li>
+                    <p>У вас нет избранных курсов.</p>
                 {% endfor %}
-            </ul>
+            </div>
         </div>
     </div>
 </div>
+<script src="{% static 'js/search.js' %}"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const likeButtons = document.querySelectorAll('.like-button');
+      
+      likeButtons.forEach(button => {
+        button.addEventListener('click', function() {
+          const courseId = this.getAttribute('data-course-id');
+          const url = `{% url 'toggle_like' 0 %}`.replace('0', courseId);
+
+          fetch(url, {
+            method: 'POST',
+            headers: {
+              'X-CSRFToken': '{{ csrf_token }}',
+            },
+            credentials: 'same-origin',
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.liked) {
+              this.classList.add('liked');
+            } else {
+              this.classList.remove('liked');
+            }
+          });
+        });
+      });
+    });
+  </script>
 </body>
 </html>

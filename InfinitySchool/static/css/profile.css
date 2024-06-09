@@ -12,13 +12,13 @@ body {
   background-position: center;
   font-family: "Poppins", sans-serif;
 }
-
 .header {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   background-color: white;
+  display: flex;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -63,30 +63,30 @@ nav ul li ul {
   border-radius: 8px;
   padding: 10px 0;
 }
-
 nav ul li ul li {
   width: 100%;
   border: 1px solid rgba(0, 0, 0, 0.1);
 }
-
 nav ul li:hover > ul {
   display: initial;
 }
 
 nav ul li ul li:hover {
   background: #e4e6ec;
-}
 
+}
 .main {
   display: flex;
-  justify-content: flex-start;
-  align-items: flex-start;
+  justify-content:flex-start;
+  align-items: center;
   padding-top: 100px;
-  gap: 5%; /* Reduced gap to fit in the favorites section */
+  gap: 10%;
+  align-self:flex-start;
 }
 
 .profile-image {
   margin-top: 20px;
+  align-self: flex-start;
 }
 
 .profile-image img {
@@ -149,46 +149,95 @@ nav ul li ul li:hover {
   width: auto;
 }
 
-/* Styles for the favorites section */
-.favorites-section {
-  background: rgba(255, 255, 255, 0.9);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  width: 300px;
-  margin-top: 20px;
+.like-button {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  display: none; /* Скрываем кнопку по умолчанию */
 }
 
-.favorites-section h3 {
-  margin-bottom: 20px;
-  color: #333;
+.profile-product-card:hover .like-button {
+  display: block; /* Показываем кнопку при наведении на карточку */
 }
 
-.favorites-section .list-group-item {
+.like-button .fas.fa-heart {
+  color: gray;
+  transition: color 0.3s;
+}
+
+.like-button.liked .fas.fa-heart {
+  color: red;
+}
+
+/* Основной контейнер для карточек */
+.profile-courses {
   display: flex;
-  align-items: center;
+  flex-wrap: wrap; /* Разрешает перенос элементов на новую строку */
+  justify-content: flex-start; /* Распределяет элементы по контейнеру */
+}
+
+/* Карточки курсов */
+.profile-product-card {
+  position: relative;
+  flex-grow: 1; /* Позволяет карточке расширяться и занимать доступное пространство */
+  min-width: 200px; /* Минимальная ширина карточки */
+  max-width: calc(30% - 20px); /* Фиксированная ширина карточки */
+  background-color: #fff;
+  padding: 20px;
   border: 1px solid #ddd;
-  border-radius: 5px;
-  padding: 10px;
-  margin-bottom: 10px;
-  background: #fff;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin-right: 50px; /* Отступ между карточками */
+  margin-bottom: 20px; /* Отступ между карточками */
+  box-sizing: border-box; /* Учитывает padding и border в расчете ширины */
 }
 
-.favorites-section .list-group-item a {
-  flex-grow: 1;
-  text-decoration: none;
+/* При меньших экранах изменяем количество карточек в ряду */
+@media (max-width: 992px) {
+  .profile-product-card {
+    max-width: calc(50% - 20px);
+  }
+}
+
+@media (max-width: 768px) {
+  .profile-product-card {
+    max-width: calc(100% - 20px);
+  }
+}
+
+.profile-product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.profile-product-card img {
+  max-width: 100%;
+  height: 150px; /* Уменьшение высоты изображения */
+  object-fit: cover;
+  border-bottom: 1px solid #ddd;
+  padding-bottom: 15px;
+  margin-bottom: 15px;
+}
+
+.profile-product-card h2 {
+  font-size: 1.5em;
+  margin: 0 0 10px;
+}
+
+.profile-product-card p {
+  font-size: 1em;
+  color: #636262;
+  margin: 0 0 15px;
+}
+
+.profile-product-card span {
+  font-size: 1.2em;
   color: #333;
-  font-weight: 500;
+  font-weight: bold;
 }
-
-.favorites-section .list-group-item a:hover {
-  color: #c5a6ae;
-}
-
-.favorites-section .list-group-item:last-child {
-  margin-bottom: 0;
-}
-
-
-

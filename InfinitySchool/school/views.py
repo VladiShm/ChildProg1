@@ -1,7 +1,8 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
 from school.models import *
-
+from django.contrib.auth.decorators import login_required
+from django.http import JsonResponse
 
 def index(request):
     context = {
@@ -12,11 +13,28 @@ def index(request):
 
 
 def catalog(request):
+    courses = Courses.objects.all()
+    liked_courses = []
+    if request.user.is_authenticated:
+        liked_courses = Like.objects.filter(user=request.user).values_list('course_id', flat=True)
+    
     context = {
-        'courses': Courses.objects.all()
+        'courses': courses,
+        'liked_courses': liked_courses,
     }
     return render(request, 'InfinitySchool/catalog.html', context)
 
+@login_required
+def toggle_like(request, course_id):
+    course = get_object_or_404(Courses, id=course_id)
+    like, created = Like.objects.get_or_create(user=request.user, course=course)
+    if not created:
+        like.delete()
+        liked = False
+    else:
+        liked = True
+
+    return JsonResponse({'liked': liked})
 
 def course_detail(request, course_id):
     course = get_object_or_404(Courses, pk=course_id)

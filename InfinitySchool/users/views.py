@@ -4,7 +4,7 @@ from users.models import User
 from users.forms import UserLoginForm, UserRegistrationForm, UserProfileForm
 from django.urls import reverse
 from django import forms
-
+from school.models import Like
 
 def login(request):
     if request.method == 'POST':
@@ -53,6 +53,14 @@ def profile(request):
     context = {
         'title': 'Profile',
         'form': form
+    }
+    favorite_courses = []
+    if request.user.is_authenticated:
+        favorite_courses = Like.objects.filter(user=request.user).select_related('course')
+    
+    context = {
+        'form': form,  # ваша форма профиля
+        'favorite_courses': favorite_courses,
     }
     return render(request, 'users/profile.html', context)
 
