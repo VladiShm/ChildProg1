@@ -62,3 +62,6 @@ def execute_code(code):
 
     except Exception as e:
         return str(e)
+    
+def send_review(request):
+    return render(request, 'InfinitySchool/send_review.html')
