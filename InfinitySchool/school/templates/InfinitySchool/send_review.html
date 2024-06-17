@@ -5,14 +5,14 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/send_review.css' %}" />
-        <link
+    <link
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-      <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
-  />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
     <title>Send Review</title>
     <style>
       body {
@@ -21,69 +21,73 @@
     </style>
   </head>
   <body>
-  <div
-        class="header"
-        style="background-image: url('{% static 'img/login/figure_blure.png' %}')"
-      >
-        <a href="#" class="logo">INFINITY CODE</a>
-        <nav>
-          <ul>
-            <li>
-              <a href="{% url 'catalog' %}"><i class="fas fa-book"></i> Каталог</a>
-            </li>
-            {% if user.is_authenticated %}
-            <li>
-              <a href="#"><i class="fas fa-bars"></i> Меню</a>
-              <ul>
-                <li>
-                  <a href="{% url 'users:profile' %}"
-                    ><i class="fas fa-user"></i> Профиль</a
-                  >
-                </li>
-                <li>
-                  <a href="#"><i class="fas fa-book-open"></i> Мои курсы</a>
-                </li>
-                <li>
+    <div
+      class="header"
+      style="background-image: url('{% static 'img/login/figure_blure.png' %}')"
+    >
+      <a href="#" class="logo">INFINITY CODE</a>
+      <nav>
+        <ul>
+          <li>
+            <a href="{% url 'catalog' %}"><i class="fas fa-book"></i> Каталог</a>
+          </li>
+          {% if user.is_authenticated %}
+          <li>
+            <a href="#"><i class="fas fa-bars"></i> Меню</a>
+            <ul>
+              <li>
+                <a href="{% url 'users:profile' %}"
+                  ><i class="fas fa-user"></i> Профиль</a
+                >
+              </li>
+              <li>
+                <a href="#"><i class="fas fa-book-open"></i> Мои курсы</a>
+              </li>
+              <li>
                 <a href="{% url 'send_review' %}"><i class="fas fa-star"></i> Оставить отзыв</a>
-                </li>
-                <li>
-                  {% if user.is_superuser %}
-                  <a href="{% url 'admin:index' %}"
-                    ><i class="fas fa-cogs"></i> Админ-панель</a
-                  >
-                  {% endif %}
-                </li>
-                <li>
-                  <a href="{% url 'users:logout' %}"><i class="fas fa-sign-out-alt"></i> Выйти</a>
-                </li>
-              </ul>
-            </li>
-            {% endif %}
-            {% if not user.is_authenticated %}
-<li>
-              <a href="{% url 'users:login' %}"
-                ><i class="fas fa-sign-in-alt"></i> Войти</a
-              >
-            </li>
-            {% endif %}
-          </ul>
-        </nav>
-      </div>
+              </li>
+              <li>
+                {% if user.is_superuser %}
+                <a href="{% url 'admin:index' %}"
+                  ><i class="fas fa-cogs"></i> Админ-панель</a
+                >
+                {% endif %}
+              </li>
+              <li>
+                <a href="{% url 'users:logout' %}"><i class="fas fa-sign-out-alt"></i> Выйти</a>
+              </li>
+            </ul>
+          </li>
+          {% endif %}
+          {% if not user.is_authenticated %}
+          <li>
+            <a href="{% url 'users:login' %}"
+              ><i class="fas fa-sign-in-alt"></i> Войти</a
+            >
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </div>
     <div class="container">
       <div class="image-container">
         <img src="{% static 'img/main/tp-boy.png' %}" alt="boy with computer" />
       </div>
       <div class="review-form">
         <h1>Поставьте свою оценку:</h1>
-        <div class="rating">
-          <span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-        </div>
-        <h2>Напишите свое мнение:</h2>
-        <textarea placeholder="Лучший сайт на свете!"></textarea>
-        <button type="submit">Отправить</button>
+        <form id="review-form" method="post" action="{% url 'send_review' %}">
+          {% csrf_token %}
+          <div class="rating">
+            <input type="hidden" name="rating" id="rating-input">
+            <span data-value="1">☆</span><span data-value="2">☆</span><span data-value="3">☆</span><span data-value="4">☆</span><span data-value="5">☆</span>
+          </div>
+          <h2>Напишите свое мнение:</h2>
+          <textarea name="review" placeholder="Лучший сайт на свете!" required></textarea>
+          <button type="submit">Отправить</button>
+        </form>
       </div>
     </div>
-     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script>
       var swiper = new Swiper(".mySwiper", {
         effect: "coverflow",
@@ -105,16 +109,18 @@
     <script>
       document.addEventListener("DOMContentLoaded", function () {
         const stars = document.querySelectorAll(".rating span");
+        const ratingInput = document.getElementById("rating-input");
+
         stars.forEach((star, index) => {
           star.addEventListener("click", function () {
-            // Очищаем все звезды
-              stars.forEach((s, i) => {
+            stars.forEach((s, i) => {
               if (i <= index) {
                 s.classList.add("active");
               } else {
                 s.classList.remove("active");
               }
             });
+            ratingInput.value = index + 1; // Устанавливаем значение рейтинга
           });
 
           star.addEventListener("mouseover", function () {
@@ -132,7 +138,21 @@
               s.classList.remove("hover");
             });
           });
-        });
+        }); 
+
+        // document.getElementById("submit-review").addEventListener("click", function() {
+        //   const rating = ratingInput.value;
+        //   const reviewText = document.getElementById("review-text").value;
+
+        //   if (!rating) {
+        //       alert("Пожалуйста, выберите рейтинг.");
+        //       return;
+        //   }       
+        // });
+
+        if (!ratingInput.value) {
+          ratingInput.value = 0;
+        }
       });
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>

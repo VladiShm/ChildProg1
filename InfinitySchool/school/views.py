@@ -1,8 +1,9 @@
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from school.models import *
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
+from django.views.decorators.http import require_POST
 
 def index(request):
     context = {
@@ -63,5 +64,17 @@ def execute_code(code):
     except Exception as e:
         return str(e)
     
+#def send_review(request):
+#   return render(request, 'InfinitySchool/send_review.html')
+
+@login_required
 def send_review(request):
+    if request.method == 'POST':
+        rating = request.POST.get('rating')
+        review_text = request.POST.get('review')
+        user = request.user
+
+        # Создание нового отзыва
+        Reviews.objects.create(user=user, rating=rating, review=review_text)
+
     return render(request, 'InfinitySchool/send_review.html')
