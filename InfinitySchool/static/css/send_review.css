@@ -141,7 +141,7 @@ body {
     margin-top: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
-    resize: vertical;
+    resize: none;
     min-height: 150px;
     min-width: 500px;
     font-size: 18px;
@@ -156,26 +156,3 @@ body {
     border-radius: 4px;
     cursor: pointer;
   }
-  
-/* Rating stars styles */
-/* .rating span {
-  font-size: 3em;
-  color: #bababa;
-  cursor: pointer;
-  transition: color 0.2s;
-}
-
-.rating span.hover,
-.rating span.hover ~ span {
-  color: #ffd700;
-}
-
-.rating span.active,
-.rating span.active ~ span {
-  color: #ffd700;
-} */
-
-/* .rating span.hover,
-.rating span.hover ~ span {
-  color: #ffd700;
-} */
