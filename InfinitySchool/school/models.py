@@ -1,5 +1,7 @@
 from django.db import models
 from users.models import User
+from django.core.validators import MinValueValidator, MaxValueValidator
+from django.utils.translation import gettext_lazy as _
 
 class Courses(models.Model):
     name = models.CharField(max_length=128)
@@ -34,3 +36,9 @@ class Like(models.Model):
 
     class Meta:
         unique_together = ('user', 'course')
+
+class Reviews(models.Model):
+    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
+    rating = models.PositiveSmallIntegerField(validators=[MinValueValidator(0), MaxValueValidator(5)])
+    review = models.TextField()
+    create_date = models.DateTimeField(auto_now_add=True)
