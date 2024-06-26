@@ -10,7 +10,7 @@
     <title>Profile</title>
 </head>
 <body style="background-image: url('{% static 'img/login/bc3.png' %}')">
-<div class="container">
+<div class="container-fluid">
     <div class="header" style="background-image: url('{% static 'img/login/figure_blure.png' %}')">
         <a href="{% url 'index' %}" class="logo">INFINITY CODE</a>
         <nav>
@@ -35,90 +35,92 @@
                         </li>
                     </ul>
                 </li>
-                <li>
-                    <a href="{% url 'users:login' %}"><i class="fas fa-sign-in-alt"></i> Войти</a>
-                </li>
+                {% if not user.is_authenticated %}
+                    <li><a href="{% url 'users:login' %}"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
+                {% endif %}
             </ul>
         </nav>
     </div>
-    <div class="main">
-        <div class="profile-image">
-            <img src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'img/profile.png'%} {% endif %}" alt="Profile Picture">
-        </div>
-        <div class="profile-form">
-            <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
-                {% csrf_token %}
-                <label for="name">Имя:</label>
-                {{ form.first_name }}
-                <label for="name">Фамилия:</label>
-                {{form.last_name}}
-                <label for="username">Имя пользователя:</label>
-                {{ form.username }}
-                <label for="email">Электронная почта:</label>
-                {{ form.email }}
-                <div class="form-row mb-2">
-                    <div class="col-lg-12">
-                        <div class="custom-file">
-                            {{form.image}}
-                            <label class="custom-file-label" for="userAvatar">Выберите изображение</label>
-                        </div>
-                    </div>
-                </div>
-                <button type="submit">Сохранить изменения</button>
-            </form>
-        </div>
-    </div>
-    <!-- List of Favorite Courses -->
     <div class="row mt-4">
-        <div class="col-md-12">
+        <div class="col-md-9">
+            <div class="main">
+                <div class="profile-image">
+                    <img src="{% if user.image %} {{ user.image.url }} {% else %} {% static 'img/profile.png'%} {% endif %}" alt="Profile Picture">
+                </div>
+                <div class="profile-form">
+                    <form action="{% url 'users:profile' %}" method="post" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <label for="name">Имя:</label>
+                        {{ form.first_name }}
+                        <label for="name">Фамилия:</label>
+                        {{form.last_name}}
+                        <label for="username">Имя пользователя:</label>
+                        {{ form.username }}
+                        <label for="email">Электронная почта:</label>
+                        {{ form.email }}
+                        <div class="form-row mb-2">
+                            <div class="col-lg-12">
+                                <div class="custom-file">
+                                    {{form.image}}
+                                    <label class="custom-file-label" for="userAvatar">Выберите изображение</label>
+                                </div>
+                            </div>
+                        </div>
+                        <button type="submit">Сохранить изменения</button>
+                    </form>
+                </div>
+        <div class="favorite-courses-block">
             <h3>Избранные курсы</h3>
-            <div class="product-grid profile-courses">
+            <ul class="favorite-courses">
                 {% for favorite in favorite_courses %}
-                    <div class="product-card profile-product-card">
+                    <li>
                         <a href="{% url 'course_detail' favorite.course.id %}">
-                            <img src="{{ favorite.course.image.url }}" alt="{{ favorite.course.name }}" />
-                            <h2>{{ favorite.course.name }}</h2>
-                            <p>{{ favorite.course.description }}</p>
+                            <img src="{{ favorite.course.image.url }}" alt="{{ favorite.course.name }}" class="course-image">
+                            <span>{{ favorite.course.name }}</span>
                         </a>
-                        <button class="like-button liked" data-course-id="{{ favorite.course.id }}">
+                         <button class="like-button liked" data-course-id="{{ favorite.course.id }}">
                             <i class="fas fa-heart"></i>
                         </button>
-                    </div>
+                    </li>
                 {% empty %}
-                    <p>У вас нет избранных курсов.</p>
+                    <li>У вас нет избранных курсов.</li>
                 {% endfor %}
-            </div>
+            </ul>
         </div>
+
+        </div>
+</div>
+
     </div>
 </div>
 <script src="{% static 'js/search.js' %}"></script>
-  <script>
+<script>
     document.addEventListener("DOMContentLoaded", () => {
-      const likeButtons = document.querySelectorAll('.like-button');
-      
-      likeButtons.forEach(button => {
-        button.addEventListener('click', function() {
-          const courseId = this.getAttribute('data-course-id');
-          const url = `{% url 'toggle_like' 0 %}`.replace('0', courseId);
+        const likeButtons = document.querySelectorAll('.like-button');
 
-          fetch(url, {
-            method: 'POST',
-            headers: {
-              'X-CSRFToken': '{{ csrf_token }}',
-            },
-            credentials: 'same-origin',
-          })
-          .then(response => response.json())
-          .then(data => {
-            if (data.liked) {
-              this.classList.add('liked');
-            } else {
-              this.classList.remove('liked');
-            }
-          });
+        likeButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                const courseId = this.getAttribute('data-course-id');
+                const url = `{% url 'toggle_like' 0 %}`.replace('0', courseId);
+
+                fetch(url, {
+                    method: 'POST',
+                    headers: {
+                        'X-CSRFToken': '{{ csrf_token }}',
+                    },
+                    credentials: 'same-origin',
+                })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.liked) {
+                        this.classList.add('liked');
+                    } else {
+                        this.classList.remove('liked');
+                    }
+                });
+            });
         });
-      });
     });
-  </script>
+</script>
 </body>
 </html>
