@@ -1,11 +1,46 @@
+import ast
+import subprocess
 from django.http import HttpResponse
-from django.shortcuts import render, get_object_or_404, redirect
+from django.shortcuts import render, get_object_or_404
 from school.models import *
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
-from django.views.decorators.http import require_POST
 
 def code_checker(request):
+    if request.method == 'POST':
+        language = request.POST.get('language')
+        code = request.POST.get('code')
+        result_message = ""
+
+        practice_task = PracticeTasks.objects.filter(description=code).first()
+
+        if practice_task:
+            expected_answer = practice_task.answer.strip()
+
+            if language == 'python':
+                try:
+                    ast.parse(code)
+                    # Компиляция и выполнение кода с захватом вывода
+                    process = subprocess.Popen(['python3', '-c', code], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    stdout, stderr = process.communicate()
+                    output = stdout.decode('utf-8').strip()  # Получение вывода программы
+
+                    # Сравнение вывода с ожидаемым ответом
+                    if output == expected_answer:
+                        result_message = f'Ваш ответ: {output}\nЗадача решена! Поздравляем! 🎉'
+                    else:
+                        result_message = f'Ваш ответ: {output}\nК сожалению, это неправильно.\nНе отчаивайтесь! Попробуйте еще раз.'
+
+                    
+                except SyntaxError as e:
+                    result_message = f"Ошибка синтаксиса Python: {str(e)}"
+
+        response_data = {
+            'message': result_message
+        }
+        
+        return JsonResponse(response_data)
+
     return render(request, 'InfinitySchool/task.html')
 
 def index(request):

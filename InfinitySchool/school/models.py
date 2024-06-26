@@ -25,6 +25,7 @@ class PracticeTasks(models.Model):
     theory = models.ForeignKey(CoursesTheory, related_name='tasks', on_delete=models.CASCADE)
     description = models.TextField()
     difficulty = models.CharField(max_length=50)
+    answer = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return f'Практическая задача для теории: {self.theory.title}'
