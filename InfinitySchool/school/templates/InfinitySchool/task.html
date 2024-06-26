@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Code Checker</title>
+    <link rel="stylesheet" href="{% static 'css/task.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/codemirror.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/codemirror.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/javascript/javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/python/python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/clike/clike.min.js"></script>
+<body>
+    <div class="container">
+        <h1>Code Checker</h1>
+        <form id="codeForm">
+            <div class="form-section">
+                <div class="form-left">
+                    <label for="language">Выберите язык:</label>
+                    <select id="language" name="language">
+                        <option value="python">Python</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="java">Java</option>
+                        <option value="cpp">C++</option>
+                        <!-- Add more languages as needed -->
+                    </select>
+                </div>
+                <div class="form-right">
+                    <label for="code">Введите свой код:</label>
+                    <!-- Replace textarea with CodeMirror -->
+                    <textarea id="code" name="code" rows="10" cols="50" placeholder="Write your code here..."></textarea>
+                </div>
+            </div>
+            <button type="submit">Проверить код</button>
+        </form>
+        <div id="resultContainer" class="result-container"></div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const languageSelect = document.getElementById('language');
+            const codeTextarea = document.getElementById('code');
+
+            const editor = CodeMirror.fromTextArea(codeTextarea, {
+                lineNumbers: true,
+                mode: languageSelect.value, // Set initial mode based on selection
+                theme: 'default', // You can choose different themes
+                indentWithTabs: true, // Use tabs for indentation
+                indentUnit: 4, // 4 spaces per indent level
+            });
+
+            // Update mode on language change
+            languageSelect.addEventListener('change', function() {
+                const mode = languageSelect.value;
+                editor.setOption('mode', mode);
+            });
+
+            // Submit handler
+            document.getElementById('codeForm').addEventListener('submit', function(event) {
+                event.preventDefault();
+
+                const code = editor.getValue();
+                const resultContainer = document.getElementById('resultContainer');
+
+                // Clear previous result
+                resultContainer.innerHTML = '';
+
+                // Dummy result for demonstration purposes
+                const result = 'Code has been checked and is valid!'; // Replace with actual result from server
+                resultContainer.textContent = result;
+            });
+        });
+    </script>
+</body>
+</html>
