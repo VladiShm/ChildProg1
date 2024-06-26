@@ -42,20 +42,14 @@ def toggle_like(request, course_id):
 
 def course_detail(request, course_id):
     course = get_object_or_404(Courses, pk=course_id)
-    return render(request, 'InfinitySchool/course_detail.html', {'course': course})
+    theories = course.theories.all()
+    if course.name != "Полный курс изучения Python":
+        return render(request, 'InfinitySchool/course_in_development.html')
 
-def theory_and_tasks(request, course_id):
-    course = get_object_or_404(Courses, pk=course_id)
-    theories = CoursesTheory.objects.filter(course=course)
-    return render(request, 'InfinitySchool/theory_and_tacks.html', {'course': course, 'theories': theories})
+    theories = course.theories.all()
+    return render(request, 'InfinitySchool/course_detail.html', {'course': course, 'theories': theories})
 
 
-def run_code(request):
-    if request.method == "POST":
-        code = request.POST.get("code", "")
-        output = execute_code(code)
-        return HttpResponse(f"<pre>{output}</pre>")
-    return render(request, 'InfinitySchool/code_sandbox.html')
 
 
 def execute_code(code):
