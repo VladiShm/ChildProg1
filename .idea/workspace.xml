@@ -5,11 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="Добавлен тест на проверку регистрации">
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_in_development.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/theory.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/static/css/course_detail.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/static/css/error_course.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/static/css/theory.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/InfinitySchool/static/img/image.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/InfinitySchool/urls.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +24,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Python Script" />
+        <option value="HTML File" />
       </list>
     </option>
   </component>
@@ -75,11 +80,11 @@
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\static\react" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\vlada\OneDrive\Рабочий стол\child-prog\InfinitySchool\static\img" />
       <recent name="C:\Users\vlada\OneDrive\Рабочий стол\child-prog" />
       <recent name="C:\Users\vlada\OneDrive\Рабочий стол\child-prog\InfinitySchool" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\fixtures" />
       <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\users\templates\users" />
-      <recent name="C:\Users\vlada\PycharmProjects\Infinity\InfinitySchool\users\templates" />
     </key>
   </component>
   <component name="RunManager">
