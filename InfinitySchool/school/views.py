@@ -6,6 +6,10 @@ from school.models import *
 from django.contrib.auth.decorators import login_required
 from django.http import JsonResponse
 
+def all_reviews(request):
+    reviews = Reviews.objects.select_related('user').all()
+    return render(request, 'InfinitySchool/all_reviews.html', {'reviews': reviews})
+
 def code_checker(request):
     if request.method == 'POST':
         language = request.POST.get('language')
