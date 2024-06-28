@@ -5,44 +5,48 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="{% static 'css/course_detail.css' %}" />
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap"
-        rel="stylesheet"
-    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;900&display=swap" rel="stylesheet" />
     <title>InfinityCode</title>
 </head>
 <body>
     <div class="container">
-      <div class="header" style="background-image: url('{% static 'img/login/figure_blure.png' %}')">
-      <a href="{% url 'index' %}" class="logo">INFINITY CODE</a>
-      <nav>
-        <ul>
-          <li><a href="{% url 'catalog' %}"><i class="fas fa-book"></i> Каталог</a></li>
-          {% if user.is_authenticated %}
-          <li>
-            <a href="#"><i class="fas fa-bars"></i> Меню</a>
-            <ul>
-              <li><a href="{% url 'users:profile' %}"><i class="fas fa-user"></i> Профиль</a></li>
-              <li><a href="#"><i class="fas fa-book-open"></i> Мои курсы</a></li>
-              {% if user.is_superuser %}
-              <li><a href="{% url 'admin:index' %}"><i class="fas fa-cogs"></i> Админ-панель</a></li>
-              {% endif %}
-              <li><a href="{% url 'users:logout' %}"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
-            </ul>
-          </li>
-          {% endif %}
-          {% if not user.is_authenticated %}
-          <li><a href="{% url 'users:login' %}"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
-          {% endif %}
-        </ul>
-      </nav>
-    </div>
+        <div class="header" style="background-image: url('{% static 'img/login/figure_blure.png' %}')">
+            <a href="{% url 'index' %}" class="logo">INFINITY CODE</a>
+            <nav>
+                <ul>
+                    <li><a href="{% url 'catalog' %}"><i class="fas fa-book"></i> Каталог</a></li>
+                    {% if user.is_authenticated %}
+                    <li>
+                        <a href="#"><i class="fas fa-bars"></i> Меню</a>
+                        <ul>
+                            <li><a href="{% url 'users:profile' %}"><i class="fas fa-user"></i> Профиль</a></li>
+                            <li><a href="#"><i class="fas fa-book-open"></i> Мои курсы</a></li>
+                            {% if user.is_superuser %}
+                            <li><a href="{% url 'admin:index' %}"><i class="fas fa-cogs"></i> Админ-панель</a></li>
+                            {% endif %}
+                            <li><a href="{% url 'users:logout' %}"><i class="fas fa-sign-out-alt"></i> Выйти</a></li>
+                        </ul>
+                    </li>
+                    {% endif %}
+                    {% if not user.is_authenticated %}
+                    <li><a href="{% url 'users:login' %}"><i class="fas fa-sign-in-alt"></i> Войти</a></li>
+                    {% endif %}
+                </ul>
+            </nav>
+        </div>
         <div class="main-content">
             <aside class="sidebar">
                 <ul>
                     {% for theory in theories %}
-                        <li><a href="#section{{ forloop.counter }}">{{ theory.title }}</a></li>
+                        <li>
+                            <a href="#section{{ forloop.counter }}">{{ theory.title }}</a>
+                            <ul>
+                                {% for task in theory.tasks.all %}
+                                    <li><a href="#task{{ forloop.parentloop.counter }}_{{ forloop.counter }}">{{ task.description }}</a></li>
+                                {% endfor %}
+                            </ul>
+                        </li>
                     {% endfor %}
                 </ul>
             </aside>
@@ -60,7 +64,7 @@
                     </p>
                 </div>
                 <div class="learn">
-                    <div class="block">
+                    <div class="block for-whom">
                         <h3>Для кого этот курс?</h3>
                         <ul class="styled-list">
                             <li>
@@ -77,7 +81,7 @@
                             </li>
                         </ul>
                     </div>
-                    <div class="block">
+                    <div class="block advantages">
                         <h3>Преимущества курса:</h3>
                         <ul class="styled-list">
                             <li>
@@ -99,9 +103,79 @@
                             </li>
                         </ul>
                     </div>
+                    {% for theory in theories %}
+                        <div id="section{{ forloop.counter }}" class="theory-section" style="display: none;">
+                            <h2>{{ theory.title }}</h2>
+                            <p>{{ theory.theory | linebreaksbr }}</p>
+                        </div>
+                        {% for task in theory.tasks.all %}
+                            <div id="task{{ forloop.parentloop.counter }}_{{ forloop.counter }}" class="task-section" style="display: none;">
+                                <h3>{{ task.description }}</h3>
+                                <form method="post" action="{% url 'task' %}">
+                                    {% csrf_token %}
+                                    <textarea name="code" rows="5"></textarea>
+                                    <input type="hidden" name="language" value="python">
+                                    <button type="submit">Проверить код</button>
+                                </form>
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
                 </div>
             </div>
         </div>
     </div>
+    <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const theoryLinks = document.querySelectorAll('.sidebar ul li a');
+        const theorySections = document.querySelectorAll('.theory-section');
+        const taskLinks = document.querySelectorAll('.sidebar ul ul li a');
+        const taskSections = document.querySelectorAll('.task-section');
+        const forWhomBlock = document.querySelector('.for-whom');
+        const advantagesBlock = document.querySelector('.advantages');
+        const descriptionBlock = document.querySelector('.title');
+
+        theoryLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substr(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    forWhomBlock.style.display = 'none';
+                    advantagesBlock.style.display = 'none';
+                    descriptionBlock.style.display = 'none';
+
+                    theorySections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    taskSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    targetSection.style.display = 'block';
+                }
+            });
+        });
+
+        taskLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href').substr(1);
+                const targetSection = document.getElementById(targetId);
+                if (targetSection) {
+                    forWhomBlock.style.display = 'none';
+                    advantagesBlock.style.display = 'none';
+                    descriptionBlock.style.display = 'none';
+
+                    theorySections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    taskSections.forEach(section => {
+                        section.style.display = 'none';
+                    });
+                    targetSection.style.display = 'block';
+                }
+            });
+        });
+    });
+    </script>
 </body>
 </html>
