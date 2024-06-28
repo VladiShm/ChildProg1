@@ -7,11 +7,7 @@
     <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/catalog.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/send_review.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/send_review.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/send_review.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/send_review.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/profile.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,7 +24,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="RESET_MODE" value="MIXED" />
+    <option name="RESET_MODE" value="HARD" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
   &quot;lastFilter&quot;: {

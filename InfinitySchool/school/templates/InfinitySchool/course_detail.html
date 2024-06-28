@@ -43,7 +43,7 @@
                             <a href="#section{{ forloop.counter }}">{{ theory.title }}</a>
                             <ul>
                                 {% for task in theory.tasks.all %}
-                                    <li><a href="#task{{ forloop.parentloop.counter }}_{{ forloop.counter }}">{{ task.description }}</a></li>
+                                    <li><a href="#task_{{ course.id }}_{{ task.id }}">{{ task.difficulty }}</a></li>
                                 {% endfor %}
                             </ul>
                         </li>
@@ -109,12 +109,12 @@
                             <p>{{ theory.theory | linebreaksbr }}</p>
                         </div>
                         {% for task in theory.tasks.all %}
-                            <div id="task{{ forloop.parentloop.counter }}_{{ forloop.counter }}" class="task-section" style="display: none;">
-                                <h3>{{ task.description }}</h3>
-                                <form method="post" action="{% url 'task' %}">
-                                    {% csrf_token %}
-                                </form>
-                            </div>
+                          <div id="task_{{ course.id }}_{{ task.id }}" class="task-section" style="display: none;">
+                        <h3>{{ task.description }}</h3>
+                        <form method="post" action="{% url 'task' %}">
+                            {% csrf_token %}
+                        </form>
+                        </div>
                         {% endfor %}
                     {% endfor %}
                 </div>
@@ -152,15 +152,16 @@
         });
     });
 
-    taskLinks.forEach(link => {
-        link.addEventListener('click', function(e) {
-            e.preventDefault();
-            const courseId = "{{ course.id }}";
-            const taskId = this.getAttribute('href').split('_')[1]; // Получаем id задания из href
-            const taskUrl = "{% url 'task' %}" + `?course_id=${courseId}&task_id=${taskId}`;
-            window.location.href = taskUrl; // Переход на страницу task.html с передачей параметров
-        });
+  taskLinks.forEach(link => {
+    link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const taskId = this.getAttribute('href').split('_')[2];
+        const taskUrl = "{% url 'task' %}" + `?course_id={{ course.id }}&task_id=${taskId}`;
+        window.location.href = taskUrl;
     });
+});
+
+
 });
     </script>
 </body>
