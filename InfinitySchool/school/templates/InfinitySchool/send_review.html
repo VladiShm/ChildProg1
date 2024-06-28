@@ -16,7 +16,7 @@
     <title>Send Review</title>
     <style>
       body {
-        background-image: url("{% static 'img/back_boy.png' %}");
+        background-image: url("{% static 'img/login/figure_blure.png' %}");
       }
     </style>
   </head>
@@ -25,7 +25,7 @@
       class="header"
       style="background-image: url('{% static 'img/login/figure_blure.png' %}')"
     >
-      <a href="#" class="logo">INFINITY CODE</a>
+      <a href="{% url 'index' %}" class="logo">INFINITY CODE</a>
       <nav>
         <ul>
           <li>
@@ -39,12 +39,6 @@
                 <a href="{% url 'users:profile' %}"
                   ><i class="fas fa-user"></i> Профиль</a
                 >
-              </li>
-              <li>
-                <a href="#"><i class="fas fa-book-open"></i> Мои курсы</a>
-              </li>
-              <li>
-                <a href="{% url 'send_review' %}"><i class="fas fa-star"></i> Оставить отзыв</a>
               </li>
               <li>
                 {% if user.is_superuser %}

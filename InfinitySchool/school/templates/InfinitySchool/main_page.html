@@ -37,12 +37,6 @@
                   >
                 </li>
                 <li>
-                  <a href="#"><i class="fas fa-book-open"></i> Мои курсы</a>
-                </li>
-                <li>
-                <a href="{% url 'send_review' %}"><i class="fas fa-star"></i> Оставить отзыв</a>
-                </li>
-                <li>
                   {% if user.is_superuser %}
                   <a href="{% url 'admin:index' %}"
                     ><i class="fas fa-cogs"></i> Админ-панель</a
@@ -162,8 +156,13 @@
                     </div>
                 </div>
                 {% endfor %}
+              <div class="btn">
 
               <button><a href="{% url 'all_reviews' %}">Все отзывы</a></button>
+               {% if user.is_authenticated %}
+                <button> <a href="{% url 'send_review' %}"><i class="fas fa-star"></i> Оставить отзыв</a></button>
+                {% endif %}
+              </div>
             </div>
 
         </div>

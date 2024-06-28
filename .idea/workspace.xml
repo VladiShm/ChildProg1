@@ -4,13 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="Добавлен тест на проверку регистрации">
+    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/all_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/all_reviews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/catalog.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/catalog.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/send_review.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/send_review.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/send_review.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/send_review.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/users/templates/users/profile.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/users/templates/users/profile.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -361,7 +362,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717675012686</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Выгрузка реальных отзывов из БД на главную страницу">
+      <option name="closed" value="true" />
+      <created>1719603744135</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1719603744136</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -376,7 +385,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add Users model, add Login" />
     <MESSAGE value="add image to Main page" />
     <MESSAGE value="last version1" />
     <MESSAGE value="last version2" />
@@ -401,7 +409,8 @@
     <MESSAGE value="Добавление CI/CD14" />
     <MESSAGE value="Добавление CI/CD15" />
     <MESSAGE value="Добавлен тест на проверку регистрации" />
-    <option name="LAST_COMMIT_MESSAGE" value="Добавлен тест на проверку регистрации" />
+    <MESSAGE value="Выгрузка реальных отзывов из БД на главную страницу" />
+    <option name="LAST_COMMIT_MESSAGE" value="Выгрузка реальных отзывов из БД на главную страницу" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
