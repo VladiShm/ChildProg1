@@ -1,4 +1,6 @@
 import ast
+import json
+import sys
 import subprocess
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404
@@ -10,42 +12,58 @@ def all_reviews(request):
     reviews = Reviews.objects.select_related('user').all()
     return render(request, 'InfinitySchool/all_reviews.html', {'reviews': reviews})
 
+from django.views.decorators.csrf import csrf_exempt
+from django.utils.decorators import method_decorator
+
+@csrf_exempt
 def code_checker(request):
     if request.method == 'POST':
-        language = request.POST.get('language')
-        code = request.POST.get('code')
-        result_message = ""
+        try:
+            data = json.loads(request.body)
+            language = data.get('language')
+            code = data.get('code')
+            result_message = ""
 
-        practice_task = PracticeTasks.objects.filter(description=code).first()
-
-        if practice_task:
-            expected_answer = practice_task.answer.strip()
+            task_id = request.GET.get('task_id')
+            task = get_object_or_404(PracticeTasks, id=task_id)
+            expected_answer = task.answer.strip()
 
             if language == 'python':
                 try:
+                    # Check if code is syntactically correct
                     ast.parse(code)
-                    # Компиляция и выполнение кода с захватом вывода
-                    process = subprocess.Popen(['python3', '-c', code], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+                    process = subprocess.Popen(
+                        [sys.executable, '-c', code], stdout=subprocess.PIPE, stderr=subprocess.PIPE
+                    )
                     stdout, stderr = process.communicate()
-                    output = stdout.decode('utf-8').strip()  # Получение вывода программы
+                    output = stdout.decode('utf-8').strip()
+                    error_output = stderr.decode('utf-8').strip()
 
-                    # Сравнение вывода с ожидаемым ответом
-                    if output == expected_answer:
+                    if error_output:
+                        result_message = f'Error in execution: {error_output}'
+                    elif output == expected_answer:
                         result_message = f'Ваш ответ: {output}\nЗадача решена! Поздравляем! 🎉'
                     else:
                         result_message = f'Ваш ответ: {output}\nК сожалению, это неправильно.\nНе отчаивайтесь! Попробуйте еще раз.'
-
-                    
                 except SyntaxError as e:
                     result_message = f"Ошибка синтаксиса Python: {str(e)}"
+                except Exception as e:
+                    result_message = f"Error during code execution: {str(e)}"
 
-        response_data = {
-            'message': result_message
-        }
-        
-        return JsonResponse(response_data)
+            response_data = {
+                'message': result_message
+            }
+            return JsonResponse(response_data)
+        except json.JSONDecodeError:
+            return JsonResponse({'message': 'Invalid JSON'}, status=400)
 
-    return render(request, 'InfinitySchool/task.html')
+    # Handling GET requests
+    course_id = request.GET.get('course_id')
+    task_id = request.GET.get('task_id')
+    course = get_object_or_404(Courses, id=course_id)
+    task = get_object_or_404(PracticeTasks, id=task_id)
+
+    return render(request, 'InfinitySchool/task.html', {'course': course, 'task': task})
 
 def index(request):
     context = {

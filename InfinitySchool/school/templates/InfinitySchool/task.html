@@ -11,9 +11,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/javascript/javascript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/python/python.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.62.2/mode/clike/clike.min.js"></script>
+</head>
 <body>
     <div class="container">
-        <h1>Code Checker</h1>
+        <h1>{{ task.description }}</h1>
         <form id="codeForm">
             <div class="form-section">
                 <div class="form-left">
@@ -23,16 +24,14 @@
                         <option value="javascript">JavaScript</option>
                         <option value="java">Java</option>
                         <option value="cpp">C++</option>
-                        <!-- Add more languages as needed -->
                     </select>
                 </div>
                 <div class="form-right">
                     <label for="code">Введите свой код:</label>
-                    <!-- Replace textarea with CodeMirror -->
                     <textarea id="code" name="code" rows="10" cols="50" placeholder="Write your code here..."></textarea>
                 </div>
             </div>
-            <button type="submit">Проверить код</button>
+            <button type="submit" class="submit-button" style="background-color: #73528d;">Проверить код</button>
         </form>
         <div id="resultContainer" class="result-container"></div>
     </div>
@@ -44,31 +43,42 @@
 
             const editor = CodeMirror.fromTextArea(codeTextarea, {
                 lineNumbers: true,
-                mode: languageSelect.value, // Set initial mode based on selection
-                theme: 'default', // You can choose different themes
-                indentWithTabs: true, // Use tabs for indentation
-                indentUnit: 4, // 4 spaces per indent level
+                mode: languageSelect.value,
+                theme: 'default',
+                indentWithTabs: true,
+                indentUnit: 4,
             });
 
-            // Update mode on language change
             languageSelect.addEventListener('change', function() {
                 const mode = languageSelect.value;
                 editor.setOption('mode', mode);
             });
 
-            // Submit handler
             document.getElementById('codeForm').addEventListener('submit', function(event) {
                 event.preventDefault();
 
                 const code = editor.getValue();
+                const language = languageSelect.value;
                 const resultContainer = document.getElementById('resultContainer');
 
-                // Clear previous result
-                resultContainer.innerHTML = '';
-
-                // Dummy result for demonstration purposes
-                const result = 'Code has been checked and is valid!'; // Replace with actual result from server
-                resultContainer.textContent = result;
+                fetch('{% url "task" %}?task_id={{ task.id }}', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': '{{ csrf_token }}',
+                    },
+                    body: JSON.stringify({
+                        language: language,
+                        code: code,
+                    }),
+                })
+                .then(response => response.json())
+                .then(data => {
+                    resultContainer.innerHTML = data.message;
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                });
             });
         });
     </script>

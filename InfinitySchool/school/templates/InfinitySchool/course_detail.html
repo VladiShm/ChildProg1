@@ -113,9 +113,6 @@
                                 <h3>{{ task.description }}</h3>
                                 <form method="post" action="{% url 'task' %}">
                                     {% csrf_token %}
-                                    <textarea name="code" rows="5"></textarea>
-                                    <input type="hidden" name="language" value="python">
-                                    <button type="submit">Проверить код</button>
                                 </form>
                             </div>
                         {% endfor %}
@@ -125,57 +122,46 @@
         </div>
     </div>
     <script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const theoryLinks = document.querySelectorAll('.sidebar ul li a');
-        const theorySections = document.querySelectorAll('.theory-section');
-        const taskLinks = document.querySelectorAll('.sidebar ul ul li a');
-        const taskSections = document.querySelectorAll('.task-section');
-        const forWhomBlock = document.querySelector('.for-whom');
-        const advantagesBlock = document.querySelector('.advantages');
-        const descriptionBlock = document.querySelector('.title');
+ document.addEventListener('DOMContentLoaded', function() {
+    const theoryLinks = document.querySelectorAll('.sidebar ul li a');
+    const theorySections = document.querySelectorAll('.theory-section');
+    const taskLinks = document.querySelectorAll('.sidebar ul ul li a');
+    const taskSections = document.querySelectorAll('.task-section');
+    const forWhomBlock = document.querySelector('.for-whom');
+    const advantagesBlock = document.querySelector('.advantages');
+    const descriptionBlock = document.querySelector('.title');
 
-        theoryLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substr(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    forWhomBlock.style.display = 'none';
-                    advantagesBlock.style.display = 'none';
-                    descriptionBlock.style.display = 'none';
+    theoryLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substr(1);
+            const targetSection = document.getElementById(targetId);
+            if (targetSection) {
+                forWhomBlock.style.display = 'none';
+                advantagesBlock.style.display = 'none';
+                descriptionBlock.style.display = 'none';
 
-                    theorySections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    taskSections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    targetSection.style.display = 'block';
-                }
-            });
-        });
-
-        taskLinks.forEach(link => {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href').substr(1);
-                const targetSection = document.getElementById(targetId);
-                if (targetSection) {
-                    forWhomBlock.style.display = 'none';
-                    advantagesBlock.style.display = 'none';
-                    descriptionBlock.style.display = 'none';
-
-                    theorySections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    taskSections.forEach(section => {
-                        section.style.display = 'none';
-                    });
-                    targetSection.style.display = 'block';
-                }
-            });
+                theorySections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                taskSections.forEach(section => {
+                    section.style.display = 'none';
+                });
+                targetSection.style.display = 'block';
+            }
         });
     });
+
+    taskLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            const courseId = "{{ course.id }}";
+            const taskId = this.getAttribute('href').split('_')[1]; // Получаем id задания из href
+            const taskUrl = "{% url 'task' %}" + `?course_id=${courseId}&task_id=${taskId}`;
+            window.location.href = taskUrl; // Переход на страницу task.html с передачей параметров
+        });
+    });
+});
     </script>
 </body>
 </html>

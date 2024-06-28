@@ -60,9 +60,9 @@ select {
     height: auto;
 }
 
-button {
+button.submit-button {
     padding: 10px 15px;
-    background-color: #28a745;
+    background-color: #73528d;
     color: #fff;
     border: none;
     border-radius: 4px;
@@ -70,8 +70,8 @@ button {
     margin-top: 10px;
 }
 
-button:hover {
-    background-color: #218838;
+button.submit-button:hover {
+    background-color: #73528d;
 }
 
 .result-container {
