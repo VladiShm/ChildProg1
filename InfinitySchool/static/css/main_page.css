@@ -459,3 +459,44 @@ font-size:3rem;
     margin: 1em 0;
   }
 }
+.reviews-form {
+    position: relative; /* To position the back button within the form */
+    width: 90%; /* Adjust width as needed */
+    max-width: 800px; /* Optional: Set a maximum width */
+    height: 100%; /* Take up full height of .container */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: transparent; /* Semi-transparent white background */
+    border-radius: 10px;
+    text-align: center;
+    overflow: auto; /* Allow overflow if content exceeds height */
+}
+.review {
+    background: #f9f9f9;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    word-wrap: break-word; /* Ensure long words break to fit */
+    overflow: hidden; /* Hide overflow content */
+}
+
+.review p {
+    margin: 0 0 10px;
+}
+
+.author {
+    font-weight: bold;
+}
+.stars span {
+    font-size: 20px;
+    color: #f39c12;
+}
+
+.rew{
+    width: 30%;
+    text-align:center;
+    display:flex;
+    flex-direction: column;
+    gap: 20px;
+}

@@ -65,10 +65,12 @@ def code_checker(request):
 
     return render(request, 'InfinitySchool/task.html', {'course': course, 'task': task})
 
+
 def index(request):
     context = {
         'title': 'InfinityCode',
         'courses': Courses.objects.all()[:3],
+        'reviews': Reviews.objects.order_by('-rating')[:2]
     }
     return render(request, 'InfinitySchool/main_page.html', context)
 

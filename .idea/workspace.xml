@@ -7,8 +7,10 @@
     <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="Добавлен тест на проверку регистрации">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/course_detail.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/course_detail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/all_reviews.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/all_reviews.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/main_page.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
