@@ -8,7 +8,9 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/InfinitySchool/school/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/admin.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/task.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/task.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InfinitySchool/static/css/task.css" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/static/css/task.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +26,7 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="RESET_MODE" value="HARD" />
   </component>
@@ -367,7 +370,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719603744136</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Кастомизация админки">
+      <option name="closed" value="true" />
+      <created>1719669206516</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1719669206516</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -382,7 +393,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add image to Main page" />
     <MESSAGE value="last version1" />
     <MESSAGE value="last version2" />
     <MESSAGE value="last version3" />
@@ -407,7 +417,8 @@
     <MESSAGE value="Добавление CI/CD15" />
     <MESSAGE value="Добавлен тест на проверку регистрации" />
     <MESSAGE value="Выгрузка реальных отзывов из БД на главную страницу" />
-    <option name="LAST_COMMIT_MESSAGE" value="Выгрузка реальных отзывов из БД на главную страницу" />
+    <MESSAGE value="Кастомизация админки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Кастомизация админки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
