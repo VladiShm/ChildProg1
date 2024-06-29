@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_detail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_in_development.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/course_in_development.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" beforeDir="false" afterPath="$PROJECT_DIR$/InfinitySchool/school/templates/InfinitySchool/main_page.html" afterDir="false" />
-    </list>
+    <list default="true" id="483328df-f7fb-4b6b-82f5-87fe79338dbc" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -385,7 +379,15 @@
       <option name="project" value="LOCAL" />
       <updated>1719676143747</updated>
     </task>
-    <option name="localTasksCounter" value="34" />
+    <task id="LOCAL-00034" summary="исправлены баги">
+      <option name="closed" value="true" />
+      <created>1719677687599</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1719677687599</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -400,7 +402,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="last version2" />
     <MESSAGE value="last version3" />
     <MESSAGE value="last version4" />
     <MESSAGE value="add user profile" />
@@ -425,7 +426,8 @@
     <MESSAGE value="Выгрузка реальных отзывов из БД на главную страницу" />
     <MESSAGE value="Кастомизация админки" />
     <MESSAGE value="test" />
-    <option name="LAST_COMMIT_MESSAGE" value="test" />
+    <MESSAGE value="исправлены баги" />
+    <option name="LAST_COMMIT_MESSAGE" value="исправлены баги" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
