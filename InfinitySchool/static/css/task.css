@@ -1,12 +1,6 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f0f0f0;
-    margin: 0;
-    padding: 0;
-}
 
-.container {
-    width: 60%;
+.container-form {
+    width: 100%;
     margin: 50px auto;
     padding: 20px;
     background-color: #fff;
